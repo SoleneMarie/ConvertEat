@@ -3,39 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Convert'Eat 🍓</title>
 
-    <link rel="stylesheet" href="./assets/style/style.css"/>
-    <link rel="stylesheet" href="./assets/style/reset.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style/style.css"/>
+    <link rel="stylesheet" href="assets/style/reset.css"/>
+
+    <script src="modules/chooseLanguage.js"></script>
 </head>
 <body>
     <header class="container">
         <div id="banner-pic">
-            <img src="./assets/img/headerPic.png" alt="logo Convert'Eat"/>
+            <img src="assets/img/headerPic.png" alt="logo Convert'Eat"/>
         </div>
         <div id="language-choice">
             <button id="fr">
                 <div class="banner-flag">
-                    <img src="./assets/img/french.png" alt="french flag"/>
+                    <img src="assets/img/french.png" alt="french flag"/>
                 </div>
                 <p>FR</p>
             </button>
             <button id="en">
                 <div class="banner-flag">
-                   <img src="./assets/img/english.png" alt="english flag"/> 
+                   <img src="assets/img/english.png" alt="english flag"/> 
                 </div>
                 <p>EN</p>
             </button>
         </div>
     </header>
+
     <main class="container">
-        <h1>Easy and Free ingredient quantity converter</h1>
+        <h1 id="main-title"></h1>
+        <script>
+            chooseLanguage (
+                "Convertisseur d'ingrédients, simple et gratuit",
+                "Easy and free ingredient quantity converter",
+                "main-title"
+            )
+        </script>
+
+        <h2>Pour combien de personnes allez-vous cuisiner?</h2>
+        <p>La recette indique <input type="number" min= 1 id="startPortions" value="4" required> personnes,
+        mais je veux cuisiner pour <input type="number" min= 1 id="endPortions" value="6" required> personnes</p>
+
+        <!-- -----------------------------------------------------------------------------------
+        ---------------------------------- Formulaire ------------------------------------------
+        ------------------------------------------------------------------------------------ -->
+
+        <form id="ingredientsForm">
+
+            <h2>Quelles sont les quantités indiquées dans la recette?</h2>
+            <div id="ingredientsContainer">
+                <!-- Les lignes d'ingrédients seront ajoutées ici -->
+                <div class="ingredientLine">
+                    <p> - 
+                        <input class="ingredient-quantity" type="number" min= 1 name="quantity" placeholder="100" required><input class="ingredient-name" type="text" name="ingredient" placeholder="grammes de farine" required>
+                    </p>
+                    
+                </div>
+            </div>
+    
+            <button type="button" id="addIngredientButton">Ajouter un ingrédient</button>
+            <br><br>
+    
+            <button type="submit">Soumettre la recette</button>
+
+        </form>
+
+        
+
     </main>
+
     <footer class="container">
 
     </footer>
-   
 
-   
+    <script type="module" src="modules/converter.js"></script>
+    <script src="modules/addLine.js"></script>
+
 </body>
 </html>

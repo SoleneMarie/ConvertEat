@@ -1,3 +1,6 @@
+/* ------------------------------------------------------------------------------
+----------------------------------  GENERAL  ------------------------------------
+------------------------------------------------------------------------------- */
 :root {
     --primary-color: #238f8f;
     --secondary-color: #edebd8;
@@ -5,7 +8,7 @@
     --button-hover-color: #c2e3e3 ;
     --title-color: #da892d;
     --dark-text-color: #91542e;
-    --clear-text-color:#d3ba9e;
+    --darker-text-color: #7b3f1a;
 }
 
 html, body {
@@ -26,10 +29,12 @@ body {
     margin:0 auto;
     padding: 8px;
 }
-
+/* ------------------------------------------------------------------------------
+-----------------------------------  HEADER  ------------------------------------
+------------------------------------------------------------------------------- */
 header {
     display:flex;
-    justify-content: center;
+    justify-content: space-evenly;
     height:120px;
 }
 
@@ -66,37 +71,52 @@ header {
     height:30px;
 }
 
-#language-choice img{
+#language-choice img {
     width:100%;
     height:100%;
     object-fit: cover;
 }
 
-#language-choice button{
+#language-choice button {
     border : none;
-    border-radius: 20px;
+    border-radius: 25px;
     width: 100px;
     height: 50px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     background-color: var(--button-color);
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     color: var(--dark-text-color);
     font-weight: bold;
     font-size: 1.3rem;
 }
 
-#language-choice button:hover{
+#language-choice button:hover {
     background-color: var(--button-hover-color);
     cursor: grab;
 }
 
+#language-choice button.selected {
+    background-color: var(--primary-color); /* Couleur de fond du bouton sélectionné */
+    color: var(--secondary-color); /* Texte en blanc */
+    box-shadow: 0 4px 8px var(--button-color); /* Ombre plus forte */
+    transform: scale(1.05); /* Agrandir légèrement le bouton */
+}
+
+/* ------------------------------------------------------------------------------
+------------------------------------  MAIN  -------------------------------------
+------------------------------------------------------------------------------- */
 main {
     height:1000px;
 }
 
-h1{
+h1 {
     text-align: center;
-    color: var(--title-color)
+    color: var(--title-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 28px;
 }
