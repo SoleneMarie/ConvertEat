@@ -1,4 +1,5 @@
  import { converter } from "./converter.js";
+ import { writeRecipe } from "./writeRecipe.js";
  
  const getValues = () => {
     // Get a NodeList.
@@ -7,8 +8,17 @@
     const ingredientsData = [];
 
     ingredientLines.forEach(line => {
-        const quantity = line.querySelector("input[name='quantity']").value;
+        const quantity = parseFloat (line.querySelector("input[name='quantity']").value)
         const ingredient = line.querySelector("input[name='ingredient']").value;
+
+        if (!quantity) {
+            return;
+            //message d'erreur à afficher
+        } 
+
+        if (!ingredient) {
+            ingredient = "ingrédient inconnu";
+        }
 
         ingredientsData.push({
             quantity: quantity,
@@ -16,6 +26,7 @@
         });
     });
 
-    converter (ingredientsData);
+    const newData = converter (ingredientsData);
+    writeRecipe (newData);
 };
 

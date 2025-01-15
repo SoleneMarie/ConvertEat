@@ -1,11 +1,23 @@
 export const converter = (ingredientsData) => {
 
-    if (document.getElementById ("startPortions") && document.getElementById ("endportions")) {
-        const startPortions = document.getElementById ("startPortions").value;
-        const endPortions = document.getElementById ("endportions").value;
+        const startPortionsElement = document.getElementById("startPortions");
+        const endPortionsElement = document.getElementById("endPortions");
+ 
+        if (!startPortionsElement || !endPortionsElement) {
+            return [];
+        }
+
+        const startPortions = parseFloat(startPortionsElement.value);
+        const endPortions = parseFloat(endPortionsElement.value);
+    
+        if (isNaN(startPortions) || isNaN(endPortions)) {
+            return [];
+        }
+
+        const newData = [];
 
         ingredientsData.forEach (ingredient => {
-            const startQuantity = ingredient.quantity;
+            const startQuantity = ingredient.quantity;       
             let endQuantity = (startQuantity*endPortions) / startPortions; 
 
             // Calculate a round quantity if necessary.
@@ -19,12 +31,11 @@ export const converter = (ingredientsData) => {
                     endQuantity = Math.ceil (endQuantity);
                 }
             }
-            
-            // Pour chaque ingrédient, produire une ligne de texte
+            newData.push({newQuantity: endQuantity, newIngredient:ingredient.ingredient});
         }); 
-    }
-}
 
+        return newData;
+    }
 
 
 
