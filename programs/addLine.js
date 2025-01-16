@@ -1,6 +1,6 @@
 const addLine = () => {
+    
     const ingredientsContainer = document.getElementById ("ingredientsContainer");
-
     // Create a <p> within a <div>.
     const newIngredientLine = document.createElement ("div");
     newIngredientLine.classList.add ("ingredientLine");
@@ -22,7 +22,7 @@ const addLine = () => {
     ingredientInput.type = "text";
     ingredientInput.name = "ingredient";
     ingredientInput.classList.add ("ingredient-name");
-    ingredientInput.placeholder = "grammes de farine";
+    ingredientInput.placeholder = "";
     ingredientInput.required = true;
 
     const ingredientDelete = document.createElement ("button");
@@ -42,6 +42,15 @@ const addLine = () => {
     newIngredientLine.appendChild (newLine);
 
     ingredientsContainer.appendChild (newIngredientLine);
+    
+    //Apply correct placeholder according to the selected language
+    let language = "";
+
+    if (document.getElementById ("fr").classList.contains ("selected")) {
+        ingredientInput.placeholder = "grammes de farine";
+    } else {
+        ingredientInput.placeholder = "grams of flour";
+    }
 };
 
 // The creation of the line is triggered by a click on the button.

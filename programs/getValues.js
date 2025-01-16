@@ -3,17 +3,15 @@
  
  const getValues = () => {
     // Get a NodeList.
-
     const ingredientLines = document.querySelectorAll(".ingredientLine");
     const ingredientsData = [];
 
     ingredientLines.forEach(line => {
         const quantity = parseFloat (line.querySelector("input[name='quantity']").value)
-        const ingredient = line.querySelector("input[name='ingredient']").value;
+        let ingredient = line.querySelector("input[name='ingredient']").value;
 
         if (!quantity) {
             return;
-            //message d'erreur à afficher
         } 
 
         if (!ingredient) {
@@ -29,4 +27,6 @@
     const newData = converter (ingredientsData);
     writeRecipe (newData);
 };
+
+document.getElementById ("submitButton").addEventListener ("click", getValues);
 

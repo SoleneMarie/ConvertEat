@@ -44,34 +44,97 @@
             )
         </script>
 
-        <h2>Pour combien de personnes allez-vous cuisiner?</h2>
-        <p>La recette indique <input type="number" min= 1 id="startPortions" value="4" required> personnes,
-        mais je veux cuisiner pour <input type="number" min= 1 id="endPortions" value="6" required> personnes</p>
-
         <!-- -----------------------------------------------------------------------------------
         ---------------------------------- Formulaire ------------------------------------------
         ------------------------------------------------------------------------------------ -->
 
-        <form id="ingredientsForm">
+            <h2 id="second-title-quantities"></h2>
+            <script>
+                chooseLanguage (
+                    "Quelles sont les quantités indiquées dans la recette?",
+                    "What are the quantities listed in the recipe?",
+                    "second-title-quantities"
+                )
+            </script>
 
-            <h2>Quelles sont les quantités indiquées dans la recette?</h2>
             <div id="ingredientsContainer">
                 <!-- Les lignes d'ingrédients seront ajoutées ici -->
                 <div class="ingredientLine">
                     <p> - 
-                        <input class="ingredient-quantity" type="number" min= 1 name="quantity" placeholder="100" required><input class="ingredient-name" type="text" name="ingredient" placeholder="grammes de farine" required>
+                        <input class="ingredient-quantity" type="number" min= 1 name="quantity" placeholder="100" required><input class="ingredient-name" type="text" name="ingredient" placeholder="" required>
                     </p>
-                    
+                    <script>
+                        chooseLanguage (
+                            " grammes de farine",
+                            " grams of flour",
+                            "ingredient-name",
+                            true
+                        )
+                    </script>
                 </div>
             </div>
     
-            <button type="button" id="addIngredientButton">Ajouter un ingrédient</button>
+            <button type="button" id="addIngredientButton"></button>
+            <script>
+                chooseLanguage (
+                    "Ajouter un ingrédient",
+                    "Add an ingredient",
+                    "addIngredientButton",
+                )
+            </script>
             <br><br>
+
+            <h2 id="second-title-people"></h2>
+            <script >
+                chooseLanguage (
+                    "Pour combien de personnes allez-vous cuisiner?",
+                    "How many people are you going to cook for?",
+                    "second-title-people"
+                )
+            </script>
+            <p>
+                <span id="spanOne"></span> 
+                <input type="number" min= 1 id="startPortions" value="4" required>
+                <span id="spanTwo"></span>
+                <input type="number" min= 1 id="endPortions" value="6" required>
+                <span id="spanThree"></span>
+            </p>
     
-            <button type="submit">Soumettre la recette</button>
+            <script >
+                chooseLanguage (
+                    "La recette indique ",
+                    "The recipe is for ",
+                    "spanOne"
+                )
+            </script>
+            <script >
+                chooseLanguage (
+                    " personnes, mais je veux cuisiner pour ",
+                    " servings, but I want to cook for ",
+                    "spanTwo"
+                )
+            </script>
+            <script >
+                chooseLanguage (
+                    " personnes.",
+                    " servings.",
+                    "spanThree"
+                )
+            </script>
 
-        </form>
 
+        <button type="button" id="submitButton"></button>
+        <script>
+            chooseLanguage (
+                "Recevoir la recette",
+                "Get the recipe",
+                "submitButton",
+            )
+        </script>
+
+        <!-- -----------------------------------------------------------------------------------
+        ------------------------------------ Recipe container ------------------------------------------
+        ------------------------------------------------------------------------------------ -->
         <div id="recipeContainer">
         </div>
 
@@ -84,7 +147,8 @@
     </footer>
 
     <script type="module" src="programs/converter.js"></script>
-    <script src="programs/addLine.js"></script>
+    <script type="module" src="programs/addLine.js"></script>
+    <script type="module" src="programs/getValues.js"></script>
 
 </body>
 </html>

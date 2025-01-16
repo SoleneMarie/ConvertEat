@@ -1,9 +1,15 @@
-const chooseLanguage = (stringFr, stringEn, divID) => {
+const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
 
     const frenchButton = document.getElementById ("fr");
     const englishButton = document.getElementById ("en");
-    const messageDiv = document.getElementById (divID);
+    let messageDiv = "";
 
+    if (isPlaceholder === true) {
+        messageDiv = document.getElementsByClassName (divID);
+    } else {
+          messageDiv = document.getElementById (divID);
+    }
+ 
     if (!frenchButton || !englishButton || !messageDiv) {
         return;
     }
@@ -16,17 +22,58 @@ const chooseLanguage = (stringFr, stringEn, divID) => {
         selectedButton.classList.add ("selected");
     };
 
-    //Default values
-    messageDiv.textContent = stringFr;
     highlightButton (frenchButton);
 
-    // Change text and button's CSS class on click.
-    englishButton.addEventListener ("click", function () {
-        messageDiv.textContent = stringEn;
-        highlightButton (englishButton);
-    });
-    frenchButton.addEventListener ("click", function () {
-        messageDiv.textContent = stringFr;
-        highlightButton (frenchButton);
-    }); 
+    // Update all elements (div or inputs)
+    const updateAll = () => {
+        if (isPlaceholder===true) {
+
+            const lines = Array.from (messageDiv);
+            lines.forEach (line => {
+                line.placeholder = stringFr;
+            }) 
+        } else {
+            messageDiv.textContent = stringFr;
+        }
+    };
+
+    // Change the elements' language
+    const changeLanguage = (isFrench) => {
+        const newText = isFrench ? stringFr : stringEn;
+        highlightButton (isFrench ? frenchButton : englishButton);
+
+        if (isPlaceholder === true) {
+            Array.from (messageDiv).forEach (line => {
+                line.placeholder= newText;
+            });
+        } else {
+            messageDiv.textContent = newText;
+        }
+    }
+    
+    updateAll ();
+
+    frenchButton.addEventListener("click", () => changeLanguage(true));
+    englishButton.addEventListener("click", () => changeLanguage(false));
+
+    // Select the parent container (containing the inputs) to watch
+    document.addEventListener ("DOMContentLoaded", () => {
+         const container = document.querySelector ("#ingredientsContainer");
+
+        // Condition to be sure the DOM has finished loading.
+        if (container) {
+            // Best than DOMNodeInserted, to react when new html content is inserted
+            const observer = new MutationObserver ((mutationsList) => {
+                mutationsList.forEach (mutation => {
+                    mutation.addedNodes.forEach (node => {
+                        if (node.classList && node.classList.contains (divID)) {
+                            chooseLanguage (stringFr, stringEn, divID, isPlaceholder);
+                        }
+                    });
+                });
+            });
+            // Reacts if a new child node is added
+            observer.observe (container, {childList : true});
+        }  
+    })  
 }
