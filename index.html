@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Convert'Eat 🍓</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/style.css"/>
     <link rel="stylesheet" href="assets/style/reset.css"/>
 
     <script src="programs/chooseLanguage.js"></script>
 </head>
+
 <body>
+    
     <header class="container">
         <div id="banner-pic">
-            <img src="assets/img/headerPic.png" alt="logo Convert'Eat"/>
         </div>
         <div id="language-choice">
             <button id="fr">
@@ -35,12 +37,19 @@
     </header>
 
     <main class="container">
-        <h1 id="main-title"></h1>
+        <h1 id="main-title"><span id="main-title-one"></span><span id="main-title-two"></span></h1>
         <script>
             chooseLanguage (
-                "Convertisseur d'ingrédients, simple et gratuit",
-                "Easy and free ingredient quantity converter",
-                "main-title"
+                "Convertisseur d'ingrédients ",
+                "Easy and free ",
+                "main-title-one"
+            )
+        </script>
+        <script>
+            chooseLanguage (
+                "simple et gratuit",
+                "ingredient quantity converter",
+                "main-title-two"
             )
         </script>
 
@@ -48,19 +57,28 @@
         ---------------------------------- Formulaire ------------------------------------------
         ------------------------------------------------------------------------------------ -->
 
-            <h2 id="second-title-quantities"></h2>
+            <h2 id="second-title-quantities">
+                <span id="second-title-quantities-one"></span>
+                <span id="second-title-quantities-two"></span>
+            </h2>
             <script>
                 chooseLanguage (
-                    "Quelles sont les quantités indiquées dans la recette?",
-                    "What are the quantities listed in the recipe?",
-                    "second-title-quantities"
+                    "Quelles sont les quantités ",
+                    "What are the quantities ",
+                    "second-title-quantities-one"
                 )
             </script>
-
-            <div id="ingredientsContainer">
+            <script>
+                chooseLanguage (
+                    "indiquées dans la recette?",
+                    "listed in the recipe?",
+                    "second-title-quantities-two"
+                )
+            </script>
+            <section id="ingredients-form"><div id="ingredientsContainer">
                 <!-- Les lignes d'ingrédients seront ajoutées ici -->
                 <div class="ingredientLine">
-                    <p> - 
+                    <p>
                         <input class="ingredient-quantity" type="number" min= 1 name="quantity" placeholder="100" required><input class="ingredient-name" type="text" name="ingredient" placeholder="" required>
                     </p>
                     <script>
@@ -81,18 +99,27 @@
                     "Add an ingredient",
                     "addIngredientButton",
                 )
-            </script>
-            <br><br>
+            </script></section>
 
-            <h2 id="second-title-people"></h2>
+            <h2 id="second-title-people">
+                <span id="second-title-people-one"></span>
+                <span id="second-title-people-two"></span>
+            </h2>
             <script >
                 chooseLanguage (
-                    "Pour combien de personnes allez-vous cuisiner?",
-                    "How many people are you going to cook for?",
-                    "second-title-people"
+                    "Pour combien de personnes ",
+                    "How many people ",
+                    "second-title-people-one"
                 )
             </script>
-            <p>
+            <script >
+                chooseLanguage (
+                    "allez-vous cuisiner?",
+                    "are you going to cook for?",
+                    "second-title-people-two"
+                )
+            </script>
+            <p id="people-number">
                 <span id="spanOne"></span> 
                 <input type="number" min= 1 id="startPortions" value="4" required>
                 <span id="spanTwo"></span>
@@ -131,14 +158,11 @@
                 "submitButton",
             )
         </script>
-
         <!-- -----------------------------------------------------------------------------------
         ------------------------------------ Recipe container ------------------------------------------
         ------------------------------------------------------------------------------------ -->
         <div id="recipeContainer">
         </div>
-
-        
 
     </main>
 

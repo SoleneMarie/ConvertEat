@@ -8,7 +8,6 @@ const addLine = () => {
     const newLine = document.createElement ("p");
 
     // Line elements creation.
-    const dash = document.createTextNode ("- ");
     
     const quantityInput = document.createElement ("input");
     quantityInput.type = "number";
@@ -34,7 +33,6 @@ const addLine = () => {
     });
 
     // Attach the created elements to the line, the line to the div, the div to the container "ingredientsContainer".
-    newLine.appendChild (dash);
     newLine.appendChild (quantityInput);
     newLine.appendChild (ingredientInput);
     newLine.appendChild (ingredientDelete);
