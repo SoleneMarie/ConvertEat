@@ -4,7 +4,7 @@
 @import url("footer.css");
 @import url("modal.css");
 
-:root {
+/* :root {
   --primary-color: #238f8f;
   --secondary-color: #f0f0f0;
   --button-color: #7fa9a9;
@@ -17,9 +17,9 @@
   --darker-text-color: #3e2c1c;
   --error-message: #d76e79;
   --legal-mentions-color: #3a404f;
-}
+} */
 
-/* :root {
+:root {
   --primary-color: #61b6b6; 
   --secondary-color: #f0f0f0; 
   --button-color: #8db8b8; 
@@ -32,7 +32,7 @@
   --darker-text-color: #3e2c1c;
   --error-message: #d76e79;
   --legal-mentions-color: #3a404f; 
-}  */
+} 
 
 body {
   background-color: var(--primary-color);

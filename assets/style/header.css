@@ -154,7 +154,7 @@
 }
 
 #language-choice button.selected {
-  background-color: var(--primary-color);
+  background-color: var(--selected-button-color);
   color: var(--secondary-color);
   box-shadow: 0 4px 8px var(--button-color);
   transform: scale(1.05);
