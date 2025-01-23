@@ -1,32 +1,31 @@
- import { converter } from "./converter.js";
- import { writeRecipe } from "./writeRecipe.js";
- 
- const getValues = () => {
-    // Get a NodeList.
-    const ingredientLines = document.querySelectorAll(".ingredientLine");
-    const ingredientsData = [];
+import { converter } from "./converter.js";
+import { writeRecipe } from "./writeRecipe.js";
 
-    ingredientLines.forEach(line => {
-        const quantity = parseFloat (line.querySelector("input[name='quantity']").value)
-        let ingredient = line.querySelector("input[name='ingredient']").value;
+export const getValues = () => {
+  // Get a NodeList.
+  const ingredientLines = document.querySelectorAll(".ingredientLine");
+  const ingredientsData = [];
 
-        if (!quantity) {
-            return;
-        } 
+  ingredientLines.forEach((line) => {
+    const quantity = parseFloat(
+      line.querySelector("input[name='quantity']").value
+    );
+    let ingredient = line.querySelector("input[name='ingredient']").value;
 
-        if (!ingredient) {
-            ingredient = "ingrédient inconnu";
-        }
+    if (!quantity) {
+      return;
+    }
 
-        ingredientsData.push({
-            quantity: quantity,
-            ingredient: ingredient
-        });
+    if (!ingredient) {
+      ingredient = "";
+    }
+
+    ingredientsData.push({
+      quantity: quantity,
+      ingredient: ingredient,
     });
+  });
 
-    const newData = converter (ingredientsData);
-    writeRecipe (newData);
+  const newData = converter(ingredientsData);
+  writeRecipe(newData);
 };
-
-document.getElementById ("submitButton").addEventListener ("click", getValues);
-

@@ -1,28 +1,36 @@
+import { updateErrorMessage } from "./updateErrorMessage.js";
+
 export const writeRecipe = (newData) => {
+  
+  const recipeContainer = document.getElementById("recipeContainer");
+  recipeContainer.innerHTML = "";
 
-    const recipeContainer = document.getElementById("recipeContainer");
-    
-    recipeContainer.innerHTML = "";
+  if (newData.length < 1) {
+    updateErrorMessage();
+    return;
+  }
 
-    if (newData.length < 1) {
-        recipeContainer.innerHTML = "<p> Veuillez entrer des quantités à convertir </p>";
-        return;
-    }
-    const recipeTitle = document.createElement("h3")
-    recipeTitle.textContent = "";
+  const existingRecipe = document.getElementsByClassName("recipe-background");
 
-    if (document.getElementById ("fr").classList.contains ("selected")) {
-        recipeTitle.textContent = "Recette sur mesure";
-    } else {
-        recipeTitle.textContent = "Personalized recipe";
-    }
-    recipeTitle.classList.add ("final-recipe-title");
-    recipeContainer.appendChild (recipeTitle);
+  const recipeBackground = document.createElement("section");
+  recipeBackground.classList.add("recipe-background");
+  const recipeTitle = document.createElement("h3");
+  recipeTitle.textContent = "";
 
-    newData.forEach (object => {
-        const line = document.createElement ("div");
-        line.textContent = `- ${object.newQuantity} ${object.newIngredient}`;
-        line.classList.add ("recipeLine");
-        recipeContainer.appendChild (line);
-    });
-}
+  if (document.getElementById("fr").classList.contains("selected")) {
+    recipeTitle.textContent = "Recette sur mesure";
+  } else {
+    recipeTitle.textContent = "Personalized recipe";
+  }
+  recipeTitle.classList.add("final-recipe-title");
+  recipeBackground.appendChild(recipeTitle);
+
+  newData.forEach((object) => {
+    const line = document.createElement("div");
+    line.textContent = `- ${object.newQuantity} ${object.newIngredient}`;
+    line.classList.add("recipeLine");
+    recipeBackground.appendChild(line);
+  });
+
+  recipeContainer.appendChild(recipeBackground);
+};

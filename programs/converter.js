@@ -1,41 +1,40 @@
 export const converter = (ingredientsData) => {
+  const startPortionsElement = document.getElementById("startPortions");
+  const endPortionsElement = document.getElementById("endPortions");
 
-        const startPortionsElement = document.getElementById("startPortions");
-        const endPortionsElement = document.getElementById("endPortions");
- 
-        if (!startPortionsElement || !endPortionsElement) {
-            return [];
-        }
+  if (!startPortionsElement || !endPortionsElement) {
+    return [];
+  }
 
-        const startPortions = parseFloat(startPortionsElement.value);
-        const endPortions = parseFloat(endPortionsElement.value);
-    
-        if (isNaN(startPortions) || isNaN(endPortions)) {
-            return [];
-        }
+  const startPortions = parseFloat(startPortionsElement.value);
+  const endPortions = parseFloat(endPortionsElement.value);
 
-        const newData = [];
+  if (isNaN(startPortions) || isNaN(endPortions)) {
+    return [];
+  }
 
-        ingredientsData.forEach (ingredient => {
-            const startQuantity = ingredient.quantity;       
-            let endQuantity = (startQuantity*endPortions) / startPortions; 
+  const newData = [];
 
-            // Calculate a round quantity if necessary.
-            if (!Number.isInteger (endQuantity)) {
-                const floorDifference = endQuantity - Math.floor (endQuantity);
-                const ceilDifference = Math.ceil (endQuantity) - endQuantity;
-    
-                if (floorDifference < ceilDifference) {
-                    endQuantity = Math.floor (endQuantity);
-                } else {
-                    endQuantity = Math.ceil (endQuantity);
-                }
-            }
-            newData.push({newQuantity: endQuantity, newIngredient:ingredient.ingredient});
-        }); 
+  ingredientsData.forEach((ingredient) => {
+    const startQuantity = ingredient.quantity;
+    let endQuantity = (startQuantity * endPortions) / startPortions;
 
-        return newData;
+    // Calculate a round quantity if necessary.
+    if (!Number.isInteger(endQuantity)) {
+      const floorDifference = endQuantity - Math.floor(endQuantity);
+      const ceilDifference = Math.ceil(endQuantity) - endQuantity;
+
+      if (floorDifference < ceilDifference) {
+        endQuantity = Math.floor(endQuantity);
+      } else {
+        endQuantity = Math.ceil(endQuantity);
+      }
     }
+    newData.push({
+      newQuantity: endQuantity,
+      newIngredient: ingredient.ingredient,
+    });
+  });
 
-
-
+  return newData;
+};

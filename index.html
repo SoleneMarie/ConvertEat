@@ -1,178 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Convert'Eat 🍓</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style/style.css"/>
-    <link rel="stylesheet" href="assets/style/reset.css"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link rel="stylesheet" href="assets/style/reset.css" />
+  </head>
 
-    <script src="programs/chooseLanguage.js"></script>
-</head>
-
-<body>
-    
-    <header class="container">
-        <div id="banner-pic">
-        </div>
-        <div id="language-choice">
+  <body>
+    <div id="wrapper">
+      <div id="main">
+        <header class="container" id="header">
+          <div id="banner-pic"></div>
+          <div id="language-choice">
             <button id="fr">
-                <div class="banner-flag">
-                    <img src="assets/img/french.png" alt="french flag"/>
-                </div>
-                <p>FR</p>
+              <div class="banner-flag">
+                <img src="assets/img/french.png" alt="french flag" />
+              </div>
+              <p>FR</p>
             </button>
             <button id="en">
-                <div class="banner-flag">
-                   <img src="assets/img/english.png" alt="english flag"/> 
-                </div>
-                <p>EN</p>
+              <div class="banner-flag">
+                <img src="assets/img/english.png" alt="english flag" />
+              </div>
+              <p>EN</p>
             </button>
-        </div>
-    </header>
+          </div>
+        </header>
 
-    <main class="container">
-        <h1 id="main-title"><span id="main-title-one"></span><span id="main-title-two"></span></h1>
-        <script>
-            chooseLanguage (
-                "Convertisseur d'ingrédients ",
-                "Easy and free ",
-                "main-title-one"
-            )
-        </script>
-        <script>
-            chooseLanguage (
-                "simple et gratuit",
-                "ingredient quantity converter",
-                "main-title-two"
-            )
-        </script>
+        <main class="container">
+          <h1 id="main-title">
+            <span id="main-title-one"></span><span id="main-title-two"></span>
+          </h1>
 
-        <!-- -----------------------------------------------------------------------------------
+          <!-- -----------------------------------------------------------------------------------
         ---------------------------------- Formulaire ------------------------------------------
         ------------------------------------------------------------------------------------ -->
 
-            <h2 id="second-title-quantities">
-                <span id="second-title-quantities-one"></span>
-                <span id="second-title-quantities-two"></span>
-            </h2>
-            <script>
-                chooseLanguage (
-                    "Quelles sont les quantités ",
-                    "What are the quantities ",
-                    "second-title-quantities-one"
-                )
-            </script>
-            <script>
-                chooseLanguage (
-                    "indiquées dans la recette?",
-                    "listed in the recipe?",
-                    "second-title-quantities-two"
-                )
-            </script>
-            <section id="ingredients-form"><div id="ingredientsContainer">
-                <!-- Les lignes d'ingrédients seront ajoutées ici -->
-                <div class="ingredientLine">
-                    <p>
-                        <input class="ingredient-quantity" type="number" min= 1 name="quantity" placeholder="100" required><input class="ingredient-name" type="text" name="ingredient" placeholder="" required>
-                    </p>
-                    <script>
-                        chooseLanguage (
-                            " grammes de farine",
-                            " grams of flour",
-                            "ingredient-name",
-                            true
-                        )
-                    </script>
-                </div>
+          <h2 id="second-title-quantities">
+            <span id="second-title-quantities-one"></span>
+            <span id="second-title-quantities-two"></span>
+          </h2>
+
+          <section id="ingredients-form">
+            <div id="ingredientsContainer">
+              <div class="ingredientLine">
+                <p>
+                  <input
+                    class="ingredient-quantity"
+                    type="number"
+                    min="1"
+                    name="quantity"
+                    placeholder="100"
+                    required
+                  /><input
+                    class="ingredient-name"
+                    type="text"
+                    name="ingredient"
+                    placeholder=""
+                    required
+                  />
+                </p>
+              </div>
             </div>
-    
             <button type="button" id="addIngredientButton"></button>
-            <script>
-                chooseLanguage (
-                    "Ajouter un ingrédient",
-                    "Add an ingredient",
-                    "addIngredientButton",
-                )
-            </script></section>
+          </section>
 
-            <h2 id="second-title-people">
-                <span id="second-title-people-one"></span>
-                <span id="second-title-people-two"></span>
-            </h2>
-            <script >
-                chooseLanguage (
-                    "Pour combien de personnes ",
-                    "How many people ",
-                    "second-title-people-one"
-                )
-            </script>
-            <script >
-                chooseLanguage (
-                    "allez-vous cuisiner?",
-                    "are you going to cook for?",
-                    "second-title-people-two"
-                )
-            </script>
-            <p id="people-number">
-                <span id="spanOne"></span> 
-                <input type="number" min= 1 id="startPortions" value="4" required>
-                <span id="spanTwo"></span>
-                <input type="number" min= 1 id="endPortions" value="6" required>
-                <span id="spanThree"></span>
-            </p>
-    
-            <script >
-                chooseLanguage (
-                    "La recette indique ",
-                    "The recipe is for ",
-                    "spanOne"
-                )
-            </script>
-            <script >
-                chooseLanguage (
-                    " personnes, mais je veux cuisiner pour ",
-                    " servings, but I want to cook for ",
-                    "spanTwo"
-                )
-            </script>
-            <script >
-                chooseLanguage (
-                    " personnes.",
-                    " servings.",
-                    "spanThree"
-                )
-            </script>
+          <h2 id="second-title-people">
+            <span id="second-title-people-one"></span>
+            <span id="second-title-people-two"></span>
+          </h2>
 
+          <p id="people-number">
+            <span id="spanOne"></span>
+            <input
+              type="number"
+              min="1"
+              id="startPortions"
+              value="4"
+              required
+            />
+            <span id="spanTwo"></span>
+            <input type="number" min="1" id="endPortions" value="6" required />
+            <span id="spanThree"></span>
+          </p>
 
-        <button type="button" id="submitButton"></button>
-        <script>
-            chooseLanguage (
-                "Recevoir la recette",
-                "Get the recipe",
-                "submitButton",
-            )
-        </script>
-        <!-- -----------------------------------------------------------------------------------
+          <div id="validate-section">
+            <button type="button" id="submitButton"></button>
+          </div>
+
+          <!-- -----------------------------------------------------------------------------------
         ------------------------------------ Recipe container ------------------------------------------
         ------------------------------------------------------------------------------------ -->
-        <div id="recipeContainer">
+          <div id="recipeContainer"></div>
+        </main>
+      </div>
+      <!-- -----------------------------------------------------------------------------------
+    ------------------------------------ Footer ------------------------------------------
+    ------------------------------------------------------------------------------------ -->
+      <footer class="container" id="footer">
+        <nav>
+          <a href="#" class="nav-link" id="openModal"> </a>
+          <div class="nav-link">
+            <a href="mailto:solene.plassart@gmail.com">
+              <img class="hoverLogo" src="./assets/img/logo-mail.png" />
+            </a>
+            <p id="hoverTarget">Contact</p>
+            <a href="https://github.com/SoleneMarie" target="blank">
+              <img class="hoverLogo" src="./assets/img/logo-github.png" />
+            </a>
+          </div>
+        </nav>
+
+        <section id="copyright">
+          <div id="footer-logo">
+            <img src="./assets/img/headerPic.png" alt="logo ConvertEat" />
+          </div>
+          <p>© 2025 <span>ConvertEat</span>.</p>
+        </section>
+      </footer>
+
+      <!-- -----------------------------------------------------------------------------------
+    ------------------------------------ Modal ------------------------------------------
+    ------------------------------------------------------------------------------------ -->
+      <section id="modalMentions" class="modal">
+        <div class="modal-content">
+          <span class="close" id="closePrivacyModal">&times;</span>
+          <div id="mentions-legales-fr">
+            <h4>Mentions Légales</h4>
+            <p>
+              Le site <strong>www.converteat.fr</strong> est édité par :<br />
+              <b>Nom</b> : Plassart Solène<br />
+              <b>Adresse</b> : 83160 La Valette-du-Var<br />
+              <b>Email </b>: solene.plassart@gmail.com<br />
+            </p>
+
+            <h5>Hébergement</h5>
+            <p>
+              Le site est hébergé par EX2.<br />
+              Adresse : CP 70161 Québec STN Québec-Centre, · G2K 0A2 · Québec,
+              Québec · CANADA<br />
+            </p>
+
+            <h5>Propriété intellectuelle</h5>
+            <p>
+              Le contenu de ce site (textes, images, graphismes) est protégé par
+              les lois françaises sur la propriété intellectuelle. Toute
+              reproduction sans autorisation préalable est interdite.
+            </p>
+
+            <h5>Responsabilité</h5>
+            <p>
+              Le site ne pourra être tenu responsable en cas de dommages directs
+              ou indirects résultant de l'accès ou de l'utilisation du site.
+            </p>
+
+            <h4>Politique de Confidentialité</h4>
+            <p>
+              Nous collectons les informations suivantes lorsque vous utilisez
+              notre site :<br />
+              - Nom<br />
+              - Adresse e-mail<br />
+              - Adresse IP<br />
+              - Autres données spécifiques liées à vos actions sur le site
+            </p>
+
+            <h5>Utilisation des données</h5>
+            <p>
+              Ce site ne collecte aucune donnée personnelle. Nous ne recueillons
+              aucune information vous concernant lorsque vous naviguez sur notre
+              site, à moins que vous ne décidiez de nous contacter directement
+              par email.
+            </p>
+
+            <h5>Protection des données</h5>
+            <p>
+              Nous mettons en place des mesures de sécurité techniques et
+              organisationnelles pour protéger vos données personnelles.
+            </p>
+
+            <h5>Cookies</h5>
+            <p>Le site n'utilise pas de cookies.</p>
+
+            <h5>Vos droits</h5>
+            <p>
+              Étant donné que ce site ne collecte aucune donnée personnelle,
+              vous n'avez pas de droits d'accès, de modification ou de
+              suppression des données.
+            </p>
+          </div>
+          <div id="mentions-legales-en">
+            <h4>Legal Notice</h4>
+            <p>
+              The site <strong>www.converteat.fr</strong> is published by:<br />
+              <b>Name</b> : Plassart Solène<br />
+              <b>Address</b> : 83160 La Valette-du-Var<br />
+              <b>Email</b>: solene.plassart@gmail.com<br />
+            </p>
+
+            <h5>Hosting</h5>
+            <p>
+              The site is hosted by EX2.<br />
+              Address: CP 70161 Québec STN Québec-Centre, · G2K 0A2 · Québec,
+              Québec · CANADA<br />
+            </p>
+
+            <h5>Intellectual Property</h5>
+            <p>
+              The content of this site (texts, images, graphics) is protected by
+              French intellectual property laws. Any reproduction without prior
+              authorization is prohibited.
+            </p>
+
+            <h5>Liability</h5>
+            <p>
+              The site cannot be held responsible for any direct or indirect
+              damages resulting from access or use of the site.
+            </p>
+
+            <h4>Privacy Policy</h4>
+            <p>
+              We collect the following information when you use our site:<br />
+              - Name<br />
+              - Email address<br />
+              - IP address<br />
+              - Other data related to your actions on the site
+            </p>
+
+            <h5>Use of Data</h5>
+            <p>
+              This site does not collect any personal data. We do not collect
+              any information about you when you browse our site, unless you
+              choose to contact us directly via email.
+            </p>
+
+            <h5>Data Protection</h5>
+            <p>
+              We implement technical and organizational security measures to
+              protect your personal data.
+            </p>
+
+            <h5>Cookies</h5>
+            <p>The site does not use cookies.</p>
+
+            <h5>Your Rights</h5>
+            <p>
+              Since this site does not collect any personal data, you do not
+              have access, modification, or deletion rights over the data.
+            </p>
+          </div>
         </div>
+      </section>
 
-    </main>
-
-    <footer class="container">
-
-    </footer>
-
-    <script type="module" src="programs/converter.js"></script>
-    <script type="module" src="programs/addLine.js"></script>
-    <script type="module" src="programs/getValues.js"></script>
-
-</body>
+      <!-- app.js is declared as a module but not really used as one. It is used as a "main" file
+    to handle the other modules -->
+      <script type="module" src="app.js"></script>
+    </div>
+  </body>
 </html>

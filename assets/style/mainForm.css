@@ -1,0 +1,305 @@
+@media (min-width: 340px) and (max-width: 380px) {
+  .ingredient-name {
+    width: 60%;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 760px) {
+  .ingredient-name {
+    width: 65%;
+  }
+}
+
+@media (min-width: 340px) and (max-width: 760px) {
+  h1 {
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 1px;
+  }
+
+  h2 {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #ingredients-form {
+    flex-direction: column;
+    justify-content: center;
+    margin: 8px 12px;
+  }
+
+  #ingredientsContainer {
+    width: 100%;
+  }
+
+  .ingredient-quantity {
+    width: 60px;
+    height: 30px;
+  }
+
+  .ingredient-name {
+    height: 30px;
+    margin: 0 6px 0 2px;
+    font-size: 15px;
+  }
+
+  #addIngredientButton {
+    height: 40px;
+    width: 200px;
+  }
+
+  #people-number {
+    font-size: 14px;
+    line-height: 30px;
+  }
+
+  #startPortions,
+  #endPortions {
+    width: 36px;
+  }
+
+  #submitButton {
+    height: 40px;
+    width: 160px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 900px) {
+  h1 {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .ingredient-quantity {
+    width: 60px;
+    height: 30px;
+  }
+
+  .ingredient-name {
+    width: 82%;
+    height: 30px;
+    margin: 0 10px 0 6px;
+  }
+
+  #ingredientsContainer {
+    width: 100%;
+  }
+
+  #ingredients-form {
+    flex-direction: column;
+    justify-content: center;
+    margin: 12px 12px;
+  }
+
+  #addIngredientButton {
+    height: 50px;
+    width: 240px;
+    font-size: 20px;
+  }
+
+  #people-number {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  #startPortions,
+  #endPortions {
+    width: 40px;
+  }
+
+  #submitButton {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  h1 {
+    font-size: 32px;
+    flex-wrap: nowrap;
+    letter-spacing: 2px;
+  }
+
+  h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .ingredient-quantity {
+    width: 60px;
+    height: 30px;
+  }
+
+  .ingredient-name {
+    width: 80%;
+    height: 30px;
+    margin: 0 10px 0 6px;
+  }
+
+  #ingredientsContainer {
+    width: 70%;
+  }
+
+  #ingredients-form {
+    justify-content: center;
+    margin: 16px 12px;
+  }
+
+  #addIngredientButton {
+    height: 60px;
+    width: 220px;
+    margin-left: 12px;
+    font-size: 20px;
+  }
+
+  #people-number {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  #startPortions,
+  #endPortions {
+    width: 40px;
+  }
+
+  #submitButton {
+    height: 60px;
+    width: 200px;
+    font-size: 20px;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: var(--title-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  margin: 0 0 16px 0;
+}
+
+h2 {
+  margin: 4px;
+  color: var(--darker-text-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+#second-title-quantities-one,
+#second-title-people-one {
+  font-weight: 800;
+}
+
+#ingredients-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+#ingredientsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredientLine {
+  margin: 4px 0;
+  height: 30px;
+}
+
+.ingredient-quantity {
+  margin: 0 4px;
+  padding: 2px;
+  border-radius: 8px;
+}
+
+.ingredient-name {
+  padding: 2px;
+  margin: 0 10px 0 6px;
+  border-radius: 8px;
+}
+
+#addIngredientButton {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  align-self: center;
+  margin-bottom: 8px;
+  box-shadow: 0 4px 8px var(--button-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+#addIngredientButton:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+#people-number {
+  margin: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  color: var(--dark-text-color);
+}
+
+#startPortions,
+#endPortions {
+  height: 26px;
+  padding: 0 4px;
+  border-radius: 8px;
+}
+
+#validate-section {
+  display: flex;
+  justify-content: center;
+}
+
+#submitButton {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  background-color: var(--validation-color);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 8px var(--button-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding: 4px;
+  margin: 6px 0;
+}
+
+#submitButton:hover {
+  background-color: var(--validation-hover);
+  transform: scale(1.05);
+}
+
+#recipeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--error-message);
+}

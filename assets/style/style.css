@@ -1,43 +1,97 @@
-@import url('header.css');
-@import url('main.css');
+@import url("header.css");
+@import url("mainForm.css");
+@import url("mainRecipe.css");
+@import url("footer.css");
+@import url("modal.css");
 
 :root {
-    --primary-color: #238f8f;
-    --secondary-color: #edebd8;
-    --button-color: #a9dddd;
-    --button-hover-color: #c2e3e3 ;
-    --title-color: #da892d;
-    --dark-text-color: #91542e;
-    --darker-text-color: #7b3f1a;
+  --primary-color: #238f8f;
+  --secondary-color: #f0f0f0;
+  --button-color: #7fa9a9;
+  --button-hover-color: #a1c7c7;
+  --selected-button-color: #1d7369;
+  --validation-color: #4c82da;
+  --validation-hover: #618fda;
+  --title-color: #f3a51c;
+  --dark-text-color: #4e342e;
+  --darker-text-color: #3e2c1c;
+  --error-message: #d76e79;
+  --legal-mentions-color: #3a404f;
 }
+
+/* :root {
+  --primary-color: #61b6b6; 
+  --secondary-color: #f0f0f0; 
+  --button-color: #8db8b8; 
+  --button-hover-color: #a7c9c9; 
+  --selected-button-color: #3a7373; 
+  --validation-color: #65a1c1; 
+  --validation-hover: #7cb6d1;
+  --title-color: #f3a51c; 
+  --dark-text-color: #4e342e;
+  --darker-text-color: #3e2c1c;
+  --error-message: #d76e79;
+  --legal-mentions-color: #3a404f; 
+}  */
 
 body {
-    width:100%;
-    max-width: 1100px;
-    background-color:var(--primary-color);
-    height:100vh;
-    margin:0 auto;
+  background-color: var(--primary-color);
+  cursor: default;
+  height: 100%;
 }
 
-main {
-    height:1000px;
+#wrapper {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 340px) and (max-width: 400px){  
-    .container {
-        width: 96%;
-        padding: 8px 0;
-    }
+#main {
+  width: 100%;
+  max-width: 1100px; /* Limite la largeur du contenu */
 }
 
-@media (min-width: 400px){  
-    .container {
-        width: 90%;
-        padding: 12px 0;
-    }
+@media (min-width: 340px) and (max-width: 400px) {
+  header,
+  footer {
+    width: 100%;
+    padding: 8px 0;
+    margin: 0 auto;
+  }
+
+  main {
+    width: 96%;
+    padding: 16px 6px;
+  }
+}
+
+@media (min-width: 400px) {
+  header,
+  footer {
+    width: 100%;
+    padding: 8px 0;
+    margin: 0 auto;
+  }
+
+  main {
+    width: 96%;
+    padding: 16px 10px;
+  }
 }
 
 .container {
-        background-color:var(--secondary-color);
-        margin:0 auto;
+  background-color: var(--secondary-color);
+  box-sizing: border-box;
+}
+
+main {
+  border-radius: 10px;
+  margin: 0 auto 20px auto;
+}
+
+#header,
+#footer {
+  background-color: var(--primary-color);
 }
