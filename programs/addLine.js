@@ -1,4 +1,7 @@
+ import { scroll } from "./scroll.js";
+
 export const addLine = () => {
+ 
   const ingredientsContainer = document.getElementById("ingredientsContainer");
   // Create a <p> within a <div>.
   const newIngredientLine = document.createElement("div");
@@ -29,6 +32,7 @@ export const addLine = () => {
   // Delete the whole line if the Delete button is clicked.
   ingredientDelete.addEventListener("click", () => {
     newIngredientLine.remove();
+    scroll();
   });
 
   // Attach the created elements to the line, the line to the div, the div to the container "ingredientsContainer".

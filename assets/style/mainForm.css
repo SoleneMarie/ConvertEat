@@ -1,4 +1,4 @@
-@media (min-width: 340px) and (max-width: 380px) {
+@media (max-width: 380px) {
   .ingredient-name {
     width: 60%;
   }
@@ -10,7 +10,7 @@
   }
 }
 
-@media (min-width: 340px) and (max-width: 760px) {
+@media (max-width: 760px) {
   h1 {
     font-size: 20px;
     display: flex;
@@ -57,11 +57,6 @@
   #people-number {
     font-size: 14px;
     line-height: 30px;
-  }
-
-  #startPortions,
-  #endPortions {
-    width: 36px;
   }
 
   #submitButton {
@@ -118,11 +113,6 @@
     text-align: center;
   }
 
-  #startPortions,
-  #endPortions {
-    width: 40px;
-  }
-
   #submitButton {
     height: 50px;
     width: 200px;
@@ -173,11 +163,6 @@
     font-size: 16px;
     line-height: 30px;
     text-align: center;
-  }
-
-  #startPortions,
-  #endPortions {
-    width: 40px;
   }
 
   #submitButton {
@@ -234,6 +219,14 @@ h2 {
   padding: 2px;
   margin: 0 10px 0 6px;
   border-radius: 8px;
+}
+
+#startPortions {
+  width: 40px;
+}
+
+#endPortions {
+  width: 50px;
 }
 
 #addIngredientButton {

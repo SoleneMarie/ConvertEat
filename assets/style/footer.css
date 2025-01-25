@@ -1,4 +1,4 @@
-@media (min-width: 340px) and (max-width: 760px) {
+@media (max-width: 760px) {
   footer p {
     font-size: 12px;
   }
@@ -105,9 +105,13 @@ footer nav {
   width: 100%;
   object-fit: contain;
 }
+#openModal {
+  transition: all 0.3s ease;
+}
 
 #openModal:hover {
-  color: var(--button-hover-color);
+  color: var(--selected-button-color);
+  transform: scale(1.03);
 }
 
 .nav-link {
@@ -116,7 +120,10 @@ footer nav {
 }
 
 .nav-link img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.nav-link img:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
 }

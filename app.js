@@ -1,8 +1,8 @@
 import { chooseLanguage } from "./programs/chooseLanguage.js";
 import { addLine } from "./programs/addLine.js";
 import { getValues } from "./programs/getValues.js";
+import { scroll } from "./programs/scroll.js";
 import { modal } from "./programs/modal.js";
-import { hover } from "./programs/hover.js";
 
 window.addEventListener("DOMContentLoaded", () => {
   chooseLanguage(
@@ -58,11 +58,12 @@ window.addEventListener("DOMContentLoaded", () => {
   chooseLanguage(" personnes.", " servings.", "spanThree");
   chooseLanguage("Recevoir la recette", "Get the recipe", "submitButton");
 
-  chooseLanguage(" Mentions légales et politique de confidentialité", "Legal notice and privacy policy", "openModal");
+  chooseLanguage(
+    " Mentions légales et politique de confidentialité",
+    "Legal notice and privacy policy",
+    "openModal"
+  );
   chooseLanguage("Recevoir la recette", "Get the recipe", "submitButton");
-
-  // Changes text color when the logos are hovered
-  hover(".hoverLogo", "hoverTarget");
 
   // The creation of the line is triggered by a click on the button.
   document
@@ -71,8 +72,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("submitButton").addEventListener("click", getValues);
 
-  const { modalElement, openModal, closeModal, switchLanguageContent} = modal();
-  // Ouvrir la modale lorsque l'utilisateur clique sur le lien
+  // Handle the center problem by removing the property if the main section is high enough.
+  document
+    .getElementById("addIngredientButton")
+    .addEventListener("click", scroll);
+  document.getElementById("submitButton").addEventListener("click", scroll);
+
+  window.addEventListener("resize", scroll);
+
+  // Open modal
+  const { modalElement, openModal, closeModal, switchLanguageContent } =
+    modal();
   openModal.onclick = function (event) {
     event.preventDefault();
     modalElement.style.display = "block";

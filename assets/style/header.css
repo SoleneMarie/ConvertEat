@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------------
 -----------------------------------  HEADER  ------------------------------------
 ------------------------------------------------------------------------------- */
-@media (min-width: 340px) and (max-width: 760px) {
+@media (max-width: 760px) {
   header {
     display: flex;
     justify-content: space-evenly;
@@ -157,7 +157,6 @@
   background-color: var(--selected-button-color);
   color: var(--secondary-color);
   box-shadow: 0 4px 8px var(--button-color);
-  transform: scale(1.05);
 }
 
 header {

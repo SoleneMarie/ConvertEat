@@ -1,4 +1,4 @@
-@media (min-width: 340px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .modal {
     font-size: 12px;
   }
@@ -43,10 +43,10 @@
 
 /* Contenu de la modale */
 .modal-content {
-  background-color: #fff;
+  background-color: var(--secondary-color);
   margin: 0 auto;
   padding: 10px;
-  border: 1px solid #888;
+  border: 1px solid var(--legal-mention-color);
   width: 90%;
   max-width: 800px;
   border-radius: 10px;
