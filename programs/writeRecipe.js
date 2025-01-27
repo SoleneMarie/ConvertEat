@@ -2,6 +2,7 @@ import { updateErrorMessage } from "./updateErrorMessage.js";
 
 export const writeRecipe = (newData) => {
   
+  console.log(newData);
   const recipeContainer = document.getElementById("recipeContainer");
   recipeContainer.innerHTML = "";
 

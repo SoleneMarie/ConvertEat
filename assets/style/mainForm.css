@@ -1,10 +1,10 @@
-@media (max-width: 380px) {
+@media (max-width: 390px) {
   .ingredient-name {
     width: 60%;
   }
 }
 
-@media (min-width: 380px) and (max-width: 760px) {
+@media (min-width: 390px) and (max-width: 760px) {
   .ingredient-name {
     width: 65%;
   }
@@ -54,12 +54,35 @@
     width: 200px;
   }
 
-  #people-number {
+  #mode-choice button {
+    height: 40px;
+    width: 120px;
+  }
+
+  #people-number, #ingredient-people-number {
     font-size: 14px;
     line-height: 30px;
   }
 
-  #submitButton {
+  #ingredient-people-number {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #maxi-line {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #ingredientSelect {
+    padding: 0 2px;
+    border-radius: 8px;
+    width: 260px;
+  }
+
+  #personSubmitButton, #ingredientSubmitButton {
     height: 40px;
     width: 160px;
     font-size: 16px;
@@ -107,13 +130,32 @@
     font-size: 20px;
   }
 
-  #people-number {
+  #mode-choice button {
+    height: 50px;
+    width: 140px;
+    font-size: 20px;
+  }
+
+  #people-number, #ingredient-people-number {
     font-size: 16px;
     line-height: 30px;
     text-align: center;
   }
 
-  #submitButton {
+  #ingredient-people-number {
+    display:flex;
+    justify-content: center;
+    gap: 4px;
+    margin:16px;
+  }
+
+  #ingredientSelect {
+    padding: 0 4px;
+    border-radius: 8px;
+    width: 300px;
+  }
+
+  #personSubmitButton, #ingredientSubmitButton {
     height: 50px;
     width: 200px;
     font-size: 20px;
@@ -159,13 +201,32 @@
     font-size: 20px;
   }
 
-  #people-number {
+  #mode-choice button {
+    height: 60px;
+    width: 140px;
+    font-size: 20px;
+  }
+
+  #people-number, #ingredient-people-number {
     font-size: 16px;
     line-height: 30px;
     text-align: center;
   }
 
-  #submitButton {
+  #ingredient-people-number {
+    display:flex;
+    justify-content: center;
+    gap: 4px;
+    margin: 18px;
+  }
+
+  #ingredientSelect {
+    padding: 0 4px;
+    border-radius: 8px;
+    width: 300px;
+  }
+
+  #personSubmitButton, #ingredientSubmitButton {
     height: 60px;
     width: 200px;
     font-size: 20px;
@@ -185,11 +246,18 @@ h2 {
   color: var(--darker-text-color);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
+  text-align: center;
 }
 
-#second-title-quantities-one,
-#second-title-people-one {
+#second-title-choice-one, #second-title-quantities-one,
+#second-title-people-one, #ingredient-second-title-people-one {
   font-weight: 800;
+}
+#mode-choice {
+  margin: 14px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 #ingredients-form {
@@ -213,23 +281,31 @@ h2 {
   margin: 0 4px;
   padding: 2px;
   border-radius: 8px;
+  text-align: center;
+  color: var(--dark-text-color);
 }
 
 .ingredient-name {
   padding: 2px;
   margin: 0 10px 0 6px;
   border-radius: 8px;
+  color: var(--dark-text-color);
+
+}
+.ingredient-quantity::placeholder, .ingredient-name::placeholder {
+  color: var(--form-content-color);
+  font-family: inherit;
 }
 
 #startPortions {
   width: 40px;
 }
 
-#endPortions {
+#endPortions, #endQuantity {
   width: 50px;
 }
 
-#addIngredientButton {
+#addIngredientButton, #mode-choice button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   font-weight: bold;
@@ -241,33 +317,56 @@ h2 {
   transition: all 0.3s ease;
 }
 
-#addIngredientButton:hover {
+#addIngredientButton:hover, #mode-choice button:hover {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   transform: scale(1.05);
   border-radius: 10px;
 }
 
+#mode-choice button.selected {
+  background-color: var(--selected-button-color);
+  color: var(--secondary-color);
+}
 #people-number {
   margin: 12px;
+}
+
+#people-number, #ingredient-people-number {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: var(--dark-text-color);
 }
 
 #startPortions,
-#endPortions {
+#endPortions, #endQuantity {
   height: 26px;
   padding: 0 4px;
   border-radius: 8px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  text-align: center;
+  color: var(--dark-text-color);;
 }
 
-#validate-section {
+#person-validate-section, #ingredient-validate-section {
   display: flex;
   justify-content: center;
 }
 
-#submitButton {
+#ingredientSelect {
+  height: 26px;
+  padding: 0 4px;
+  border-radius: 8px;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  text-align: center; 
+  color: var(--dark-text-color);
+}
+
+#personSubmitButton, #ingredientSubmitButton {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
   background-color: var(--validation-color);
@@ -279,7 +378,7 @@ h2 {
   margin: 6px 0;
 }
 
-#submitButton:hover {
+#personSubmitButton:hover, #ingredientSubmitButton:hover {
   background-color: var(--validation-hover);
   transform: scale(1.05);
 }

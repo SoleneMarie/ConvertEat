@@ -43,16 +43,26 @@
           <h1 id="main-title">
             <span id="main-title-one"></span><span id="main-title-two"></span>
           </h1>
-
-          <!-- -----------------------------------------------------------------------------------
-        ---------------------------------- Formulaire ------------------------------------------
+          <!-------------------------------------------------------------------------------------
+        ---------------------------------- Choice Buttons -------------------------------------
         ------------------------------------------------------------------------------------ -->
 
+          <h2 id="second-title-choice">
+            <span id="second-title-choice-one"></span>
+            <span id="second-title-choice-two"></span>
+          </h2>
+          <div id="mode-choice">
+            <button id="person-mode-button"></button>
+            <button id="ingredient-mode-button"></button>
+          </div>
           <h2 id="second-title-quantities">
             <span id="second-title-quantities-one"></span>
             <span id="second-title-quantities-two"></span>
           </h2>
 
+          <!-------------------------------------------------------------------------------------
+        ---------------------------------- Formulaires ------------------------------------------
+        -------------------------------------------------------------------------------------->
           <section id="ingredients-form">
             <div id="ingredientsContainer">
               <div class="ingredientLine">
@@ -77,27 +87,64 @@
             <button type="button" id="addIngredientButton"></button>
           </section>
 
-          <h2 id="second-title-people">
-            <span id="second-title-people-one"></span>
-            <span id="second-title-people-two"></span>
-          </h2>
+          <div id="person-choice-form">
+            <h2 id="second-title-people">
+              <span id="second-title-people-one"></span>
+              <span id="second-title-people-two"></span>
+            </h2>
 
-          <p id="people-number">
-            <span id="spanOne"></span>
-            <input
-              type="number"
-              min="1"
-              id="startPortions"
-              value="4"
-              required
-            />
-            <span id="spanTwo"></span>
-            <input type="number" min="1" id="endPortions" value="6" required />
-            <span id="spanThree"></span>
-          </p>
+            <p id="people-number">
+              <span id="spanOne"></span>
+              <input
+                type="number"
+                min="1"
+                id="startPortions"
+                value="4"
+                required
+              />
+              <span id="spanTwo"></span>
+              <input
+                type="number"
+                min="1"
+                id="endPortions"
+                value="6"
+                required
+              />
+              <span id="spanThree"></span>
+            </p>
+            <div id="person-validate-section">
+              <button type="button" id="personSubmitButton"></button>
+            </div>
+          </div>
 
-          <div id="validate-section">
-            <button type="button" id="submitButton"></button>
+          <div id="ingredient-choice-form">
+            <h2 id="ingredient-second-title-people">
+              <span id="ingredient-second-title-people-one"></span>
+              <span id="ingredient-second-title-people-two"></span>
+            </h2>
+
+            <div id="ingredient-people-number">
+              <p id="maxi-line">
+                <span id="ingredient-spanOne"></span>
+                <select id="ingredientSelect">
+                  <option id="ingredientSelectOption" value=""></option>
+                </select>
+              </p>
+              <p id="mini-line">
+                <span id="ingredient-spanTwo"></span>
+                <input
+                  type="number"
+                  min="1"
+                  id="endQuantity"
+                  value="6"
+                  required
+                />
+                <span id="ingredient-spanThree"></span>
+              </p>
+            </div>
+            <div id="ingredient-validate-section">
+              <button type="button" id="ingredientSubmitButton"></button>
+            </div>
           </div>
 
           <!-- -----------------------------------------------------------------------------------

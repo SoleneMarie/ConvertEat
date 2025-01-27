@@ -1,15 +1,33 @@
 export const converter = (ingredientsData) => {
-  const startPortionsElement = document.getElementById("startPortions");
-  const endPortionsElement = document.getElementById("endPortions");
+  const personModeButton = document.getElementById("person-mode-button");
+  let startPortionsElement = 0;
+  let endPortionsElement = 0;
+  console.log("ingredientsData :", ingredientsData);
+
+  if (personModeButton.classList.contains("selected")) {
+    startPortionsElement = Number(
+      document.getElementById("startPortions").value
+    );
+    endPortionsElement = Number(document.getElementById("endPortions").value);
+    console.log("personMode");
+  } else {
+    const startPortion = document.getElementById("ingredientSelect");
+    const startPortionValue = startPortion.value;
+    console.log("ingredientMode");
+    //regex to extract a number from a string.
+    const result = startPortionValue.match(/\d+(\.\d+)?/);
+    startPortionsElement = Number(result[0]);
+    endPortionsElement = Number(document.getElementById("endQuantity").value);
+  }
+  console.log("start : ", startPortionsElement);
+  console.log("end : ", endPortionsElement);
 
   if (!startPortionsElement || !endPortionsElement) {
     return [];
   }
 
-  const startPortions = parseFloat(startPortionsElement.value);
-  const endPortions = parseFloat(endPortionsElement.value);
-
-  if (isNaN(startPortions) || isNaN(endPortions)) {
+  if (isNaN(startPortionsElement) || isNaN(endPortionsElement)) {
+    console.log("pas un nombre?");
     return [];
   }
 
@@ -17,7 +35,8 @@ export const converter = (ingredientsData) => {
 
   ingredientsData.forEach((ingredient) => {
     const startQuantity = ingredient.quantity;
-    let endQuantity = (startQuantity * endPortions) / startPortions;
+    let endQuantity =
+      (startQuantity * endPortionsElement) / startPortionsElement;
 
     // Calculate a round quantity if necessary.
     if (!Number.isInteger(endQuantity)) {
@@ -30,6 +49,8 @@ export const converter = (ingredientsData) => {
         endQuantity = Math.ceil(endQuantity);
       }
     }
+    console.log("end quantity", endQuantity);
+    console.log("newData", newData);
     newData.push({
       newQuantity: endQuantity,
       newIngredient: ingredient.ingredient,
