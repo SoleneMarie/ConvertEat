@@ -1,8 +1,6 @@
 import { updateErrorMessage } from "./updateErrorMessage.js";
 
 export const writeRecipe = (newData) => {
-  
-  console.log(newData);
   const recipeContainer = document.getElementById("recipeContainer");
   recipeContainer.innerHTML = "";
 
@@ -10,8 +8,6 @@ export const writeRecipe = (newData) => {
     updateErrorMessage();
     return;
   }
-
-  const existingRecipe = document.getElementsByClassName("recipe-background");
 
   const recipeBackground = document.createElement("section");
   recipeBackground.classList.add("recipe-background");

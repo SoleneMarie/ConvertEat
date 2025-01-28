@@ -1,5 +1,6 @@
 import { converter } from "./converter.js";
 import { writeRecipe } from "./writeRecipe.js";
+import { updateErrorMessage } from "./updateErrorMessage.js";
 
 export const getValues = () => {
   // Get a NodeList.
@@ -25,6 +26,11 @@ export const getValues = () => {
       ingredient: ingredient,
     });
   });
+
+  if (ingredientsData.length === 0) {
+    updateErrorMessage();
+    return;
+  }
 
   const newData = converter(ingredientsData);
   writeRecipe(newData);

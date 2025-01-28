@@ -5,7 +5,6 @@ export const scroll = () => {
   const limitScreenHeight = (window.innerHeight * 90) / 100;
 
   if (mainHeight >= limitScreenHeight) {
-    console.log(wrapper.classList);
     if (wrapper.classList.value) {
       wrapper.classList.remove("center-align");
     }
