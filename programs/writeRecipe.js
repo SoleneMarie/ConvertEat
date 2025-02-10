@@ -3,8 +3,10 @@ import { updateErrorMessage } from "./updateErrorMessage.js";
 export const writeRecipe = (newData) => {
   const recipeContainer = document.getElementById("recipeContainer");
   recipeContainer.innerHTML = "";
+  console.log("new data", newData);
 
-  if (newData.length < 1) {
+  if (!newData || newData.length < 1) {
+    console.log("new data", newData);
     updateErrorMessage();
     return;
   }

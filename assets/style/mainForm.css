@@ -59,19 +59,20 @@
     width: 120px;
   }
 
-  #people-number, #ingredient-people-number {
+  #people-number,
+  #ingredient-people-number {
     font-size: 14px;
     line-height: 30px;
   }
 
   #ingredient-people-number {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   #maxi-line {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -82,7 +83,8 @@
     width: 260px;
   }
 
-  #personSubmitButton, #ingredientSubmitButton {
+  #personSubmitButton,
+  #ingredientSubmitButton {
     height: 40px;
     width: 160px;
     font-size: 16px;
@@ -91,7 +93,7 @@
 
 @media (min-width: 760px) and (max-width: 900px) {
   h1 {
-    font-size: 30px;
+    font-size: 28px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -136,17 +138,18 @@
     font-size: 20px;
   }
 
-  #people-number, #ingredient-people-number {
+  #people-number,
+  #ingredient-people-number {
     font-size: 16px;
     line-height: 30px;
     text-align: center;
   }
 
   #ingredient-people-number {
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 4px;
-    margin:16px;
+    margin: 16px;
   }
 
   #ingredientSelect {
@@ -155,7 +158,8 @@
     width: 300px;
   }
 
-  #personSubmitButton, #ingredientSubmitButton {
+  #personSubmitButton,
+  #ingredientSubmitButton {
     height: 50px;
     width: 200px;
     font-size: 20px;
@@ -164,7 +168,7 @@
 
 @media (min-width: 900px) {
   h1 {
-    font-size: 32px;
+    font-size: 28px;
     flex-wrap: nowrap;
     letter-spacing: 2px;
   }
@@ -207,14 +211,15 @@
     font-size: 20px;
   }
 
-  #people-number, #ingredient-people-number {
+  #people-number,
+  #ingredient-people-number {
     font-size: 16px;
     line-height: 30px;
     text-align: center;
   }
 
   #ingredient-people-number {
-    display:flex;
+    display: flex;
     justify-content: center;
     gap: 4px;
     margin: 18px;
@@ -226,7 +231,8 @@
     width: 300px;
   }
 
-  #personSubmitButton, #ingredientSubmitButton {
+  #personSubmitButton,
+  #ingredientSubmitButton {
     height: 60px;
     width: 200px;
     font-size: 20px;
@@ -235,7 +241,7 @@
 
 h1 {
   text-align: center;
-  color: var(--title-color);
+  color: var(--primary-color);
   font-family: "Raleway", sans-serif;
   font-weight: 800;
   margin: 0 0 16px 0;
@@ -243,18 +249,20 @@ h1 {
 
 h2 {
   margin: 4px;
-  color: var(--darker-text-color);
+  color: var(--dark-text-color);
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   text-align: center;
 }
 
-#second-title-choice-one, #second-title-quantities-one,
-#second-title-people-one, #ingredient-second-title-people-one {
+#second-title-choice-one,
+#second-title-quantities-one,
+#second-title-people-one,
+#ingredient-second-title-people-one {
   font-weight: 800;
 }
 #mode-choice {
-  margin: 14px 0;
+  margin: 6px 0;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -265,6 +273,7 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 #ingredientsContainer {
@@ -290,9 +299,9 @@ h2 {
   margin: 0 10px 0 6px;
   border-radius: 8px;
   color: var(--dark-text-color);
-
 }
-.ingredient-quantity::placeholder, .ingredient-name::placeholder {
+.ingredient-quantity::placeholder,
+.ingredient-name::placeholder {
   color: var(--form-content-color);
   font-family: inherit;
 }
@@ -301,55 +310,67 @@ h2 {
   width: 40px;
 }
 
-#endPortions, #endQuantity {
+#endPortions,
+#endQuantity {
   width: 50px;
 }
 
-#addIngredientButton, #mode-choice button {
-  background-color: var(--primary-color);
+#addIngredientButton,
+#mode-choice button {
   color: var(--secondary-color);
   font-weight: bold;
   font-family: "Quicksand", sans-serif;
   align-self: center;
   margin-bottom: 8px;
-  box-shadow: 0 4px 8px var(--button-color);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
-#addIngredientButton:hover, #mode-choice button:hover {
+#addIngredientButton {
+  background-color: var(--button-color);
+  box-shadow: 0 4px 8px var(--button-color);
+}
+
+#mode-choice button {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  box-shadow: 0 4px 8px var(--button-color);
+}
+
+#addIngredientButton:hover,
+#mode-choice button:hover {
   transform: scale(1.05);
-  border-radius: 10px;
 }
 
 #mode-choice button.selected {
   background-color: var(--selected-button-color);
   color: var(--secondary-color);
+  box-shadow: 0 4px 8px var(--selected-button-color);
 }
 #people-number {
   margin: 12px;
 }
 
-#people-number, #ingredient-people-number {
+#people-number,
+#ingredient-people-number {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: var(--dark-text-color);
 }
 
 #startPortions,
-#endPortions, #endQuantity {
+#endPortions,
+#endQuantity {
   height: 26px;
   padding: 0 4px;
   border-radius: 8px;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   text-align: center;
-  color: var(--dark-text-color);;
+  color: var(--dark-text-color);
 }
 
-#person-validate-section, #ingredient-validate-section {
+#person-validate-section,
+#ingredient-validate-section {
   display: flex;
   justify-content: center;
 }
@@ -362,24 +383,41 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-size: inherit;
   font-weight: 600;
-  text-align: center; 
+  text-align: center;
   color: var(--dark-text-color);
 }
 
-#personSubmitButton, #ingredientSubmitButton {
+#ingredientSubmitButton {
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
   background-color: var(--validation-color);
   color: var(--secondary-color);
-  box-shadow: 0 4px 8px var(--button-color);
+  box-shadow: 0 4px 8px var(--validation-color);
   border-radius: 10px;
   transition: all 0.3s ease;
   padding: 4px;
   margin: 6px 0;
 }
 
-#personSubmitButton:hover, #ingredientSubmitButton:hover {
-  background-color: var(--validation-hover);
+#personSubmitButton {
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  background-color: var(--validation-color);
+  color: var(--secondary-color);
+  box-shadow: 0 4px 8px var(--validation-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  padding: 4px;
+  margin: 6px 0;
+}
+
+#personSubmitButton:hover,
+#ingredientSubmitButton:hover {
+  transform: scale(1.05);
+}
+
+#personSubmitButton:selected,
+#ingredientSubmitButton:selected {
   transform: scale(1.05);
 }
 
@@ -394,4 +432,19 @@ h2 {
   font-size: 14px;
   font-weight: 700;
   color: var(--error-message);
+}
+
+/* Snippet to change the inputs' background color when autocompleted */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--dark-text-color);
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  transition: background-color 5000s ease-in-out 0s;
 }

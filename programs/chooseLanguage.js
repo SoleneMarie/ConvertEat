@@ -1,5 +1,4 @@
 import { updateErrorMessage } from "./updateErrorMessage.js";
-import { getValues } from "./getValues.js";
 
 export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
   const frenchButton = document.getElementById("fr");
@@ -60,8 +59,6 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
     changeLanguage(true);
     if (errorElement.length !== 0) {
       updateErrorMessage();
-    } else {
-      getValues();
     }
   });
 
@@ -69,8 +66,6 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
     changeLanguage(false);
     if (errorElement.length !== 0) {
       updateErrorMessage();
-    } else {
-      getValues();
     }
   });
 

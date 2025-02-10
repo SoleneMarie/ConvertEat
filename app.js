@@ -104,15 +104,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   chooseLanguage(" personnes.", " servings.", "spanThree");
 
-  chooseLanguage("La recette indique ", "The recipe calls for ", "ingredient-spanOne");
-
-  chooseLanguage("Sélectionnez un ingrédient", "Select an ingredient", "ingredientSelectOption");
+  chooseLanguage(
+    "La recette indique ",
+    "The recipe calls for ",
+    "ingredient-spanOne"
+  );
 
   chooseLanguage(
-    "mais j'en ai ",
-    "but I have ",
-    "ingredient-spanTwo"
+    "Sélectionnez un ingrédient",
+    "Select an ingredient",
+    "ingredientSelectOption"
   );
+
+  chooseLanguage("mais j'en ai ", "but I have ", "ingredient-spanTwo");
 
   chooseLanguage(" personnes.", " servings.", "spanThree");
 
@@ -120,7 +124,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   chooseLanguage("Recevoir la recette", "Get the recipe", "personSubmitButton");
 
-  chooseLanguage("Recevoir la recette", "Get the recipe", "ingredientSubmitButton");
+  chooseLanguage(
+    "Recevoir la recette",
+    "Get the recipe",
+    "ingredientSubmitButton"
+  );
 
   chooseLanguage(
     "Mentions légales et politique de confidentialité",
@@ -138,16 +146,24 @@ window.addEventListener("DOMContentLoaded", () => {
 
   ingredientSelect.addEventListener("focus", updateSelect);
 
-  document.getElementById("personSubmitButton").addEventListener("click", getValues);
+  document
+    .getElementById("personSubmitButton")
+    .addEventListener("click", getValues);
 
-  document.getElementById("ingredientSubmitButton").addEventListener("click", getValues);
+  document
+    .getElementById("ingredientSubmitButton")
+    .addEventListener("click", getValues);
 
   // Handle the center problem by removing the property if the main section is high enough.
   document
     .getElementById("addIngredientButton")
     .addEventListener("click", scroll);
-  document.getElementById("ingredientSubmitButton").addEventListener("click", scroll);
-  document.getElementById("personSubmitButton").addEventListener("click", scroll);
+  document
+    .getElementById("ingredientSubmitButton")
+    .addEventListener("click", scroll);
+  document
+    .getElementById("personSubmitButton")
+    .addEventListener("click", scroll);
 
   window.addEventListener("resize", scroll);
 
@@ -171,4 +187,29 @@ window.addEventListener("DOMContentLoaded", () => {
       modalElement.style.display = "none";
     }
   };
+
+  // Attendre que la page soit entièrement chargée
+  window.addEventListener("load", function () {
+    // Sélectionner tous les champs de texte du formulaire
+    const inputs = document.querySelectorAll(
+      'input[type="text"], input[type="email"], input[type="password"]'
+    );
+
+    // Ajouter un événement pour détecter l'autocomplétion
+    inputs.forEach((input) => {
+      input.addEventListener("focus", function () {
+        // Vérifier si le champ a été autofillé (rempli par le navigateur)
+        if (input.value !== "") {
+          input.style.backgroundColor = "white"; // Forcer le fond blanc
+          input.style.color = "black"; // Forcer la couleur du texte
+        }
+      });
+
+      // Vérifier l'autofill même si l'utilisateur ne clique pas
+      if (input.value !== "") {
+        input.style.backgroundColor = "white"; // Forcer le fond blanc
+        input.style.color = "black"; // Forcer la couleur du texte
+      }
+    });
+  });
 });

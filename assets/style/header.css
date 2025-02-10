@@ -1,6 +1,34 @@
 /* ------------------------------------------------------------------------------
 -----------------------------------  HEADER  ------------------------------------
 ------------------------------------------------------------------------------- */
+@media (max-width: 380px) {
+  #title {
+    font-size: 30px;
+  }
+  #banner-pic {
+    width: 54px;
+  }
+  #language-choice button {
+    width: 54px;
+  }
+  button p {
+    font-size: 14px;
+  }
+}
+@media (min-width: 380px) and (max-width: 760px) {
+  #title {
+    font-size: 34px;
+  }
+  #banner-pic {
+    width: 60px;
+  }
+  #language-choice button {
+    width: 60px;
+  }
+  button p {
+    font-size: 16px;
+  }
+}
 @media (max-width: 760px) {
   header {
     display: flex;
@@ -9,20 +37,60 @@
   }
 
   #banner-pic {
-    width: 60%;
-    height: 100px;
-    background-image: url("../img/headerPic.png");
+    height: 100%;
+    background-image: url("../img/without-border-logo.png");
+  }
+
+  #title {
+    line-height: 30px;
+    text-align: center;
+    align-self: center;
   }
 
   #language-choice {
     flex-direction: column;
-    width: 100px;
-    font-size: 20px;
   }
 
   #language-choice button {
-    width: 80%;
     height: 45%;
+  }
+
+  .banner-flag {
+    height: 75%;
+    width: 38%;
+  }
+}
+
+@media (min-width: 760px) and (max-width: 900px) {
+  header {
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+  }
+
+  #title {
+    font-size: 50px;
+    display: flex;
+    align-self: center;
+  }
+
+  #banner-pic {
+    width: 100px;
+    height: 100%;
+    background-image: url("../img/without-border-logo.png");
+  }
+
+  #language-choice {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    align-items: center;
+    padding-left: 10px;
+  }
+
+  #language-choice button {
+    width: 80px;
+    height: 60%;
   }
 
   .banner-flag {
@@ -35,59 +103,29 @@
   }
 }
 
-@media (min-width: 760px) and (max-width: 900px) {
-  header {
-    display: flex;
-    justify-content: space-evenly;
-    height: 120px;
-  }
-
-  #banner-pic {
-    width: 80%;
-    height: 120px;
-    background-image: url("../img/headerPicWide.png");
-  }
-
-  #language-choice {
-    width: 160px;
-    flex-direction: column;
-  }
-
-  #language-choice button {
-    width: 60%;
-    height: 45%;
-  }
-
-  .banner-flag {
-    height: 75%;
-    width: 38%;
-  }
-
-  button p {
-    font-size: 22px;
-  }
-}
-
 @media (min-width: 900px) {
   header {
     display: flex;
     justify-content: space-evenly;
-    height: 160px;
+    height: 100px;
+  }
+
+  #title {
+    font-size: 54px;
+    display: flex;
+    align-self: center;
   }
 
   #banner-pic {
-    width: 70%;
-    height: 120px;
-    background-image: url("../img/headerPicWide.png");
-  }
-
-  #language-choice {
-    width: 240px;
+    width: 100px;
+    height: 120%;
+    align-self: center;
+    background-image: url("../img/without-border-logo.png");
   }
 
   #language-choice button {
-    width: 50%;
-    height: 40%;
+    width: 84px;
+    height: 70%;
     margin: 0 10px;
   }
 
@@ -97,13 +135,12 @@
   }
 
   button p {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 
 #banner-pic {
-  height: 100%;
-  margin: 0 12px;
+  margin: 0 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,10 +151,27 @@
   box-sizing: content-box;
 }
 
+#title {
+  font-family: "Titan One", sans-serif;
+}
+
+#titleOne {
+  color: var(--selected-button-color);
+}
+
+#titleTwo {
+  color: var(--error-message);
+}
+
 #language-choice {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 6px;
   align-items: center;
+  padding-left: 10px;
+}
+#language-choice p {
+  font-family: "Montserrat", sans-serif;
 }
 
 #fr,
@@ -142,13 +196,12 @@
   align-items: center;
   background-color: var(--button-color);
   transition: all 0.3s ease;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  color: var(--dark-text-color);
+  box-shadow: 0 4px 8px var(--button-color);
+  color: var(--secondary-color);
   font-weight: bold;
 }
 
 #language-choice button:hover {
-  background-color: var(--button-hover-color);
   cursor: grab;
   transform: scale(1.05);
 }
@@ -156,11 +209,11 @@
 #language-choice button.selected {
   background-color: var(--selected-button-color);
   color: var(--secondary-color);
-  box-shadow: 0 4px 8px var(--button-color);
+  box-shadow: 0 4px 8px var(--selected-button-color);
 }
 
 header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }

@@ -29,7 +29,7 @@
 .modal {
   display: none; /* Cachée par défaut */
   position: fixed;
-  z-index: 1; /* Doit être au-dessus de tout le contenu */
+  z-index: 1000; /* Doit être au-dessus de tout le contenu */
   left: 0;
   top: 0;
   width: 100%;
@@ -75,11 +75,11 @@
 h4 {
   font-family: "Raleway", sans-serif;
   margin: 12px 0;
-  color: var(--darker-text-color);
+  color: var(--dark-text-color);
 }
 
 h5 {
   font-family: "Raleway", sans-serif;
   margin: 8px 0;
-  color: var(--darker-text-color);
+  color: var(--dark-text-color);
 }

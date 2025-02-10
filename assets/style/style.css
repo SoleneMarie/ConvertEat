@@ -12,31 +12,26 @@
   --selected-button-color: #1d7369;
   --validation-color: #4c82da;
   --validation-hover: #618fda;
-  --title-color: #f3a51c;
   --dark-text-color: #4e342e;
-  --darker-text-color: #3e2c1c;
   --error-message: #d76e79;
   --legal-mentions-color: #3a404f;
 } */
 
 :root {
-  --primary-color: #61b6b6;
+  --background-color:#a8d5d5;
+  --primary-color: #53a4a4;
   --secondary-color: #f0f0f0;
-  --button-color: #8db8b8;
-  --button-hover-color: #a7c9c9;
+  --button-color: #53a4a4;
   --selected-button-color: #3a7373;
   --validation-color: #65a1c1;
-  --validation-hover: #7cb6d1;
-  --title-color: #f3a51c;
   --dark-text-color: #4e342e;
-  --darker-text-color: #3e2c1c;
   --error-message: #d76e79;
   --legal-mentions-color: #3a404f;
   --form-content-color: #7f7f7f;
 }
 
 body {
-  background-color: var(--primary-color);
+  background-color: var(--background-color);
   cursor: default;
   height: 100%;
 }
@@ -44,12 +39,12 @@ body {
 #wrapper {
   display: flex;
   height: 100%;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
 }
 
 .center-align {
- justify-content: center;
+  justify-content: center;
 }
 
 #main {
@@ -58,10 +53,14 @@ body {
 }
 
 @media (max-width: 400px) {
-  header,
+  header {
+    width: 100%;
+    padding: 16px 6px;
+  }
+
   footer {
     width: 100%;
-    padding: 8px 0;
+    padding-top: 8px;
     margin: 0 auto;
   }
 
@@ -72,7 +71,11 @@ body {
 }
 
 @media (min-width: 400px) {
-  header,
+  header {
+    width: 100%;
+    padding: 16px 10px;
+  }
+
   footer {
     width: 100%;
     padding: 8px 0;
@@ -92,10 +95,15 @@ body {
 
 main {
   border-radius: 10px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto;
 }
 
-#header,
-#footer {
-  background-color: var(--primary-color);
+header {
+  margin-top: 14px;
+  background-color: var(--background-color);
+}
+
+footer {
+  background-color: var(--background-color);
+  padding-bottom: 14px;
 }

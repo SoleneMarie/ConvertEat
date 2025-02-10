@@ -22,10 +22,6 @@
     width: 20px;
     margin-right: 4px;
   }
-
-  #copyright {
-    margin-top: 4px;
-  }
 }
 
 @media (min-width: 760px) and (max-width: 900px) {
@@ -48,8 +44,8 @@
   }
 
   #footer-logo {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     margin-right: 4px;
   }
 }
@@ -78,6 +74,9 @@
     width: 26px;
     margin-right: 4px;
   }
+}
+footer {
+  line-height: 20px;
 }
 
 footer nav {
