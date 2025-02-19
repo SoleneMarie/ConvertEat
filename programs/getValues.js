@@ -2,28 +2,27 @@ import { converter } from "./converter.js";
 import { writeRecipe } from "./writeRecipe.js";
 
 export const getValues = () => {
-  // Get a NodeList.
-  const ingredientLines = document.querySelectorAll(".ingredientLine");
+  const ingredientLines = Array.from(
+    document.getElementsByClassName("new-line-text")
+  );
+  console.log(ingredientLines);
   const ingredientsData = [];
 
   ingredientLines.forEach((line) => {
-    const quantity = parseFloat(
-      line.querySelector("input[name='quantity']").value
-    );
-    let ingredient = line.querySelector("input[name='ingredient']").value;
+    let content = line.textContent;
+    const regex = /^(\d+)\s*(.*)$/;
+    // méthode qui renvoie un tableau : chaine capturée, première partie, deuxième partie. (ou null)
+    const match = content.match(regex);
 
-    if (!quantity) {
-      return;
+    if (match) {
+      const quantity = match[1];
+      const ingredient = match[2];
+
+      ingredientsData.push({
+        quantity: quantity,
+        ingredient: ingredient,
+      });
     }
-
-    if (!ingredient) {
-      ingredient = "";
-    }
-
-    ingredientsData.push({
-      quantity: quantity,
-      ingredient: ingredient,
-    });
   });
 
   const newData = converter(ingredientsData);

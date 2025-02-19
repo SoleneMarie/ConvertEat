@@ -1,10 +1,8 @@
 export const converter = (ingredientsData) => {
-  console.log("data des ingrédients", ingredientsData);
-
   if (ingredientsData.length === 0) {
     return;
   }
-  
+
   const personModeButton = document.getElementById("person-mode-button");
   let startPortionsElement = 0;
   let endPortionsElement = 0;

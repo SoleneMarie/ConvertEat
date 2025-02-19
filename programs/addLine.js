@@ -1,4 +1,5 @@
 import { scroll } from "./scroll.js";
+import { isNumber } from "./isNumber.js";
 
 export const addLine = () => {
  
@@ -12,12 +13,19 @@ export const addLine = () => {
   // Line elements creation.
 
   const quantityInput = document.createElement("input");
-  quantityInput.type = "number";
+  quantityInput.type = "text";
   quantityInput.name = "quantity";
   quantityInput.classList.add("ingredient-quantity");
-  quantityInput.placeholder = "100";
+  quantityInput.placeholder = "0";
   quantityInput.min = 1;
+  quantityInput.inputMode = "decimal";
+  quantityInput.pattern="[0-9]*[.,]?[0-9]+";
   quantityInput.required = true;
+
+  quantityInput.addEventListener("input", () => {
+    let newValue = isNumber(quantityInput.value, false);
+    quantityInput.value = newValue;
+  });
 
   const ingredientInput = document.createElement("input");
   ingredientInput.type = "text";
@@ -47,8 +55,8 @@ export const addLine = () => {
   let language = "";
 
   if (document.getElementById("fr").classList.contains("selected")) {
-    ingredientInput.placeholder = "grammes de farine";
+    ingredientInput.placeholder = "ex : grammes de farine";
   } else {
-    ingredientInput.placeholder = "grams of flour";
+    ingredientInput.placeholder = "ex : grams of flour";
   }
 };

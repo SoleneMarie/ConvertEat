@@ -5,11 +5,7 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
   const englishButton = document.getElementById("en");
   let messageDiv = "";
 
-  if (isPlaceholder === true) {
-    messageDiv = document.getElementsByClassName(divID);
-  } else {
-    messageDiv = document.getElementById(divID);
-  }
+  messageDiv = document.getElementById(divID);
 
   if (!frenchButton || !englishButton || !messageDiv) {
     return;
@@ -28,12 +24,13 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
   // Update all elements (div or inputs)
   const updateAll = () => {
     if (isPlaceholder === true) {
-      const lines = Array.from(messageDiv);
-      lines.forEach((line) => {
-        line.placeholder = stringFr;
-      });
+      messageDiv.placeholder = stringFr;
     } else {
-      messageDiv.textContent = stringFr;
+      if (divID.includes("optgroup")) {
+        messageDiv.setAttribute("label", stringFr);
+      } else {
+        messageDiv.textContent = stringFr;
+      }
     }
   };
 
@@ -43,29 +40,55 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
     highlightButton(isFrench ? frenchButton : englishButton);
 
     if (isPlaceholder === true) {
-      Array.from(messageDiv).forEach((line) => {
-        line.placeholder = newText;
-      });
+      messageDiv.placeholder = newText;
     } else {
-      messageDiv.textContent = newText;
+      if (divID.includes("optgroup")) {
+        messageDiv.setAttribute("label", newText);
+      } else {
+        messageDiv.textContent = newText;
+      }
     }
   };
 
   updateAll();
 
-  const errorElement = document.getElementsByClassName("error");
+  const recipe = document.getElementsByClassName("recipe-background");
 
   frenchButton.addEventListener("click", () => {
     changeLanguage(true);
-    if (errorElement.length !== 0) {
-      updateErrorMessage();
+
+    if (recipe.length !== 0) {
+      const finalRecipeTitle =
+        recipe[0].getElementsByClassName("final-recipe-title")[0];
+      finalRecipeTitle.innerText = "Recette sur mesure";
+    }
+    // Mise à jour des messages d'erreur.
+    const error = document.getElementById("error");
+    const error2 = document.getElementById("error2");
+    if (error) {
+      error.innerText = "Veuillez compléter tous les champs";
+    }
+    if (error2) {
+      error2.innerText = "Veuillez compléter tous les champs";
     }
   });
 
   englishButton.addEventListener("click", () => {
     changeLanguage(false);
-    if (errorElement.length !== 0) {
-      updateErrorMessage();
+
+    if (recipe.length !== 0) {
+      const finalRecipeTitle =
+        recipe[0].getElementsByClassName("final-recipe-title")[0];
+      finalRecipeTitle.innerText = "Personalized recipe";
+    }
+    // Mise à jour des messages d'erreur.
+    const error = document.getElementById("error");
+    const error2 = document.getElementById("error2");
+    if (error) {
+      error.innerText = "Please complete all fields";
+    }
+    if (error2) {
+      error2.innerText = "Please complete all fields";
     }
   });
 

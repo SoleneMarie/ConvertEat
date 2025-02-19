@@ -1,18 +1,57 @@
 @media (max-width: 390px) {
-  .ingredient-name {
-    width: 60%;
+  .followStep {
+    font-size: 14px;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .step-number {
+    height: 36px;
+    width: 36px;
+    top: -10px;
+    left: -10px;
+  }
+
+  .step-number p {
+    font-size: 22px;
+  }
+
+  select {
+    width: 90px;
   }
 }
 
 @media (min-width: 390px) and (max-width: 760px) {
-  .ingredient-name {
-    width: 65%;
+  .followStep {
+    font-size: 15px;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .step-number {
+    height: 38px;
+    width: 38px;
+    top: -10px;
+    left: -10px;
+  }
+
+  .step-number p {
+    font-size: 24px;
+  }
+
+  select {
+    width: 110px;
   }
 }
 
 @media (max-width: 760px) {
   h1 {
-    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -28,30 +67,49 @@
     align-items: center;
   }
 
+  h6 {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   #ingredients-form {
     flex-direction: column;
     justify-content: center;
-    margin: 8px 12px;
+    margin: 8px 6px;
   }
 
   #ingredientsContainer {
     width: 100%;
   }
 
-  .ingredient-quantity {
-    width: 60px;
+  #ingredient-quantity {
+    width: 42px;
     height: 30px;
   }
 
-  .ingredient-name {
+  select {
+    height: 30px;
+  }
+
+  #ingredient-name {
+    width: 100%;
     height: 30px;
     margin: 0 6px 0 2px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
-  #addIngredientButton {
-    height: 40px;
-    width: 200px;
+  #addButton {
+    width: 20px;
+    font-size: 40px;
+    margin: -5px 4px 0 4px;
+    transition: all 0.1s ease;
+  }
+  #addButton:hover {
+    font-size: 42px;
+    margin: -2px 4px 0 4px;
   }
 
   #mode-choice button {
@@ -62,7 +120,7 @@
   #people-number,
   #ingredient-people-number {
     font-size: 14px;
-    line-height: 30px;
+    line-height: 32px;
   }
 
   #ingredient-people-number {
@@ -89,6 +147,19 @@
     width: 160px;
     font-size: 16px;
   }
+
+  #description {
+    font-size: 13px;
+  }
+
+  #convert-span,
+  #eat-span {
+    font-size: 16px;
+  }
+
+  .relief {
+    margin: 22px 4px;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 900px) {
@@ -105,15 +176,27 @@
     text-align: center;
   }
 
-  .ingredient-quantity {
+  h6 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+  }
+
+  #ingredient-quantity {
     width: 60px;
     height: 30px;
   }
 
-  .ingredient-name {
+  #ingredient-name {
     width: 82%;
     height: 30px;
     margin: 0 10px 0 6px;
+  }
+
+  select {
+    height: 30px;
   }
 
   #ingredientsContainer {
@@ -124,12 +207,6 @@
     flex-direction: column;
     justify-content: center;
     margin: 12px 12px;
-  }
-
-  #addIngredientButton {
-    height: 50px;
-    width: 240px;
-    font-size: 20px;
   }
 
   #mode-choice button {
@@ -164,11 +241,61 @@
     width: 200px;
     font-size: 20px;
   }
+
+  #ingredient-name {
+    width: 65%;
+  }
+
+  .followStep {
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #description {
+    font-size: 15px;
+  }
+
+  #convert-span,
+  #eat-span {
+    font-size: 18px;
+  }
+
+  #followStepText {
+    margin-top: 3px;
+  }
+
+  .step-number {
+    height: 44px;
+    width: 44px;
+    top: -13px;
+    left: -13px;
+  }
+
+  .step-number p {
+    font-size: 32px;
+  }
+
+  .relief {
+    margin: 22px 10px;
+  }
+
+  #addButton {
+    width: 20px;
+    font-size: 40px;
+    margin: -5px 4px 0 4px;
+    transition: all 0.1s ease;
+  }
+  #addButton:hover {
+    font-size: 42px;
+    margin: -2px 4px 0 4px;
+  }
 }
 
 @media (min-width: 900px) {
   h1 {
-    font-size: 28px;
+    font-size: 32px;
     flex-wrap: nowrap;
     letter-spacing: 2px;
   }
@@ -178,15 +305,27 @@
     text-align: center;
   }
 
-  .ingredient-quantity {
-    width: 60px;
+  h6 {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+  }
+
+  #ingredient-quantity {
+    width: 40px;
     height: 30px;
   }
 
-  .ingredient-name {
+  #ingredient-name {
     width: 80%;
     height: 30px;
     margin: 0 10px 0 6px;
+  }
+
+  select {
+    height: 30px;
   }
 
   #ingredientsContainer {
@@ -196,13 +335,6 @@
   #ingredients-form {
     justify-content: center;
     margin: 16px 12px;
-  }
-
-  #addIngredientButton {
-    height: 60px;
-    width: 220px;
-    margin-left: 12px;
-    font-size: 20px;
   }
 
   #mode-choice button {
@@ -237,6 +369,52 @@
     width: 200px;
     font-size: 20px;
   }
+
+  .followStep {
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  #description {
+    font-size: 15px;
+  }
+
+  #convert-span,
+  #eat-span {
+    font-size: 18px;
+  }
+
+  #followStepText {
+    margin-top: 3px;
+  }
+
+  .step-number {
+    height: 50px;
+    width: 50px;
+    top: -16px;
+    left: -16px;
+  }
+
+  .step-number p {
+    font-size: 36px;
+  }
+
+  .relief {
+    margin: 22px 14px;
+  }
+
+  #addButton {
+    width: 20px;
+    font-size: 40px;
+    margin: -5px 4px 0 4px;
+    transition: all 0.1s ease;
+  }
+  #addButton:hover {
+    font-size: 42px;
+    margin: -2px 6px 0 6px;
+  }
 }
 
 h1 {
@@ -244,7 +422,7 @@ h1 {
   color: var(--primary-color);
   font-family: "Raleway", sans-serif;
   font-weight: 800;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
 }
 
 h2 {
@@ -253,6 +431,13 @@ h2 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   text-align: center;
+}
+
+h6 {
+  margin: 4px;
+  color: var(--dark-text-color);
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }
 
 #second-title-choice-one,
@@ -273,7 +458,6 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 #ingredientsContainer {
@@ -281,29 +465,48 @@ h2 {
   flex-direction: column;
 }
 
-.ingredientLine {
+#ingredientLine {
   margin: 4px 0;
   height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.ingredient-quantity {
-  margin: 0 4px;
-  padding: 2px;
+#ingredient-quantity {
+  margin: 0 2px;
+  padding: 2px 2px;
   border-radius: 8px;
   text-align: center;
-  color: var(--dark-text-color);
+  color: var(--dark-text-color) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
 }
 
-.ingredient-name {
-  padding: 2px;
-  margin: 0 10px 0 6px;
+#ingredient-name {
+  padding: 2px 8px;
+  margin: 0 2px;
   border-radius: 8px;
-  color: var(--dark-text-color);
+  color: var(--dark-text-color) !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
 }
-.ingredient-quantity::placeholder,
-.ingredient-name::placeholder {
+
+#ingredient-quantity::placeholder {
   color: var(--form-content-color);
   font-family: inherit;
+  font-size: 14px;
+}
+
+#ingredient-name::placeholder {
+  color: var(--form-content-color);
+  font-family: inherit;
+  font-size: 14px;
 }
 
 #startPortions {
@@ -314,8 +517,6 @@ h2 {
 #endQuantity {
   width: 50px;
 }
-
-#addIngredientButton,
 #mode-choice button {
   color: var(--secondary-color);
   font-weight: bold;
@@ -324,19 +525,10 @@ h2 {
   margin-bottom: 8px;
   border-radius: 10px;
   transition: all 0.3s ease;
-}
-
-#addIngredientButton {
-  background-color: var(--button-color);
-  box-shadow: 0 4px 8px var(--button-color);
-}
-
-#mode-choice button {
   background-color: var(--primary-color);
   box-shadow: 0 4px 8px var(--button-color);
 }
 
-#addIngredientButton:hover,
 #mode-choice button:hover {
   transform: scale(1.05);
 }
@@ -346,15 +538,13 @@ h2 {
   color: var(--secondary-color);
   box-shadow: 0 4px 8px var(--selected-button-color);
 }
-#people-number {
-  margin: 12px;
-}
 
 #people-number,
 #ingredient-people-number {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: var(--dark-text-color);
+  margin: 12px;
 }
 
 #startPortions,
@@ -427,7 +617,7 @@ h2 {
   align-items: center;
 }
 
-.error {
+#error {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -447,4 +637,83 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--dark-text-color);
   -webkit-box-shadow: 0 0 0px 1000px white inset;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+.relief {
+  padding: 8px 0;
+  border-radius: 10px;
+  border: solid 4px var(--background-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#description {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: var(--dark-text-color);
+  text-align: center;
+}
+
+.followStep {
+  margin-top: 4px;
+  text-align: center;
+  font-weight: 800;
+  display: flex;
+}
+
+#convert-span {
+  color: var(--selected-button-color);
+}
+
+#eat-span {
+  color: var(--error-message);
+}
+
+#followStepText {
+  color: var(--selected-button-color);
+}
+
+.step-number {
+  border-radius: 50%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--secondary-color);
+  position: absolute;
+}
+
+.step-number p {
+  font-family: "Titan One", sans-serif;
+  text-shadow: 1px 1px 0px var(--primary-color),
+    -1px -1px 0px var(--primary-color), 1px -1px 0px var(--primary-color),
+    -1px 1px 0px var(--primary-color);
+}
+
+select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  margin: 0 4px;
+  padding: 2px 2px;
+  border-radius: 8px;
+  text-align: center;
+  color: var(--dark-text-color);
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 13px;
+  display: block;
+}
+
+option {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#addButton {
+  color: var(--primary-color);
+  font-weight: 600;
 }

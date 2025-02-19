@@ -2,33 +2,19 @@ export const updateSelect = () => {
   const ingredientSelect = document.getElementById("ingredientSelect");
 
   const ingredientLines = [];
-  const ingredientDivs = document.querySelectorAll(".ingredientLine");
+  const ingredientTexts = document.querySelectorAll(".new-line-text");
 
-  let defaultIngredient = "";
   let noDataMessage = "";
 
   if (document.getElementById("fr").classList.contains("selected")) {
-    defaultIngredient = "ingrédient inconnu";
     noDataMessage = "Aucun ingrédient disponible";
   } else {
-    defaultIngredient = "unknown ingredient";
     noDataMessage = "No available ingredient";
   }
 
-  ingredientDivs.forEach((div) => {
-    const quantityInput = div.querySelector(".ingredient-quantity");
-    const ingredientInput = div.querySelector(".ingredient-name");
-
-    const quantity = quantityInput ? String(quantityInput.value) : "";
-    const ingredient =
-      ingredientInput && ingredientInput.value !== ""
-        ? ingredientInput.value
-        : defaultIngredient;
-
-    if (quantity && ingredient) {
-      const line = `${quantity} ${ingredient}`;
-      ingredientLines.push(line);
-    }
+  // Récupérer les lignes déjà validées et les ranger dans un tableau.
+  ingredientTexts.forEach((text) => {
+    ingredientLines.push(text.textContent);
   });
 
   ingredientSelect.innerHTML = "";

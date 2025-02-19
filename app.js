@@ -1,10 +1,12 @@
-import { chooseLanguage } from "./programs/chooseLanguage.js";
-import { selectMode } from "./programs/selectMode.js";
-import { addLine } from "./programs/addLine.js";
-import { updateSelect } from "./programs/updateSelect.js";
-import { getValues } from "./programs/getValues.js";
-import { scroll } from "./programs/scroll.js";
-import { modal } from "./programs/modal.js";
+import { chooseLanguage } from "./programs/chooseLanguage.js?v=2.3";
+import { isNumber } from "./programs/isNumber.js?v=2.3";
+import { selectMode } from "./programs/selectMode.js?v=2.3";
+import { validateLine } from "./programs/validateLine.js";
+import { addLine } from "./programs/addLine.js?v=2.3";
+import { updateSelect } from "./programs/updateSelect.js?v=2.3";
+import { getValues } from "./programs/getValues.js?v=2.3";
+import { scroll } from "./programs/scroll.js?v=2.3";
+import { modal } from "./programs/modal.js?v=2.3";
 
 window.addEventListener("DOMContentLoaded", () => {
   chooseLanguage(
@@ -18,6 +20,20 @@ window.addEventListener("DOMContentLoaded", () => {
     "ingredient quantity converter",
     "main-title-two"
   );
+
+  chooseLanguage(
+    "Suivre une recette, oui, mais... pour douze personnes au lieu de huit, avec cinq oeufs au lieu de quatre?",
+    "Following a recipe, yes, but... for twelve people instead of eight, with five eggs instead of four?",
+    "descriptionText"
+  );
+
+  chooseLanguage(
+    "ajuste les quantités pour vous.",
+    "adjusts the quantities for you.",
+    "descriptionSpan"
+  );
+
+  chooseLanguage("Suivez les étapes!", "Follow the steps!", "followStepText");
 
   chooseLanguage(
     "Choisissez votre méthode",
@@ -42,23 +58,12 @@ window.addEventListener("DOMContentLoaded", () => {
   );
 
   chooseLanguage(
-    "indiquées dans la recette?",
-    "listed in the recipe?",
+    "indiquées dans votre recette?",
+    "listed in your recipe?",
     "second-title-quantities-two"
   );
 
-  chooseLanguage(
-    " grammes de farine",
-    " grams of flour",
-    "ingredient-name",
-    true
-  );
-
-  chooseLanguage(
-    "Ajouter un ingrédient",
-    "Add an ingredient",
-    "addIngredientButton"
-  );
+  chooseLanguage("ex : farine", "ex : flour", "ingredient-name", true);
 
   chooseLanguage(
     "Pour combien de personnes ",
@@ -122,11 +127,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   chooseLanguage(".", ".", "ingredient-spanThree");
 
-  chooseLanguage("Recevoir la recette", "Get the recipe", "personSubmitButton");
+  chooseLanguage(
+    "Afficher la recette",
+    "Display the recipe",
+    "personSubmitButton"
+  );
 
   chooseLanguage(
-    "Recevoir la recette",
-    "Get the recipe",
+    "Afficher la recette",
+    "Display the recipe",
     "ingredientSubmitButton"
   );
 
@@ -136,15 +145,143 @@ window.addEventListener("DOMContentLoaded", () => {
     "openModal"
   );
 
-  chooseLanguage("Recevoir la recette", "Get the recipe", "submitButton");
+  chooseLanguage("aucune unité", "no unit", "no-unit");
 
+  chooseLanguage("milligrammes", "milligrams", "milligrammes");
+
+  chooseLanguage("centigrammes", "centigrams", "centigrammes");
+
+  chooseLanguage("décigrammes", "decigrams", "décigrammes");
+
+  chooseLanguage("grammes", "grams", "grammes");
+
+  chooseLanguage("kilogrammes", "kilograms", "kilogrammes");
+
+  chooseLanguage("livres", "pounds", "livres");
+
+  chooseLanguage("onces", "ounces", "onces");
+
+  chooseLanguage("millilitres", "milliliters", "millilitres");
+
+  chooseLanguage("centilitres", "centiliters", "centilitres");
+
+  chooseLanguage("décilitres", "deciliters", "décilitres");
+
+  chooseLanguage("litres", "liters", "litres");
+
+  chooseLanguage("pintes", "pints", "pintes");
+
+  chooseLanguage("gallons", "gallons", "gallons");
+
+  chooseLanguage("cuillères à soupe", "tablespoons", "cuillères-à-soupe");
+
+  chooseLanguage("cuillères à café", "teaspoons", "cuillères-à-café");
+
+  chooseLanguage("verres", "glasses", "verres");
+
+  chooseLanguage("tasses", "cups", "tasses");
+
+  chooseLanguage("bols", "bowls", "bols");
+
+  chooseLanguage("pincées", "pinches", "pincées");
+
+  chooseLanguage("poignées", "handfuls", "poignées");
+
+  chooseLanguage("moitié", "half", "moitié");
+
+  chooseLanguage("tiers", "thirds", "tiers");
+
+  chooseLanguage("quarts", "quarters", "quarts");
+
+  chooseLanguage("Rien", "Nothing", "optgroup1");
+
+  chooseLanguage("Poids", "Weight", "optgroup2");
+
+  chooseLanguage("Contenance", "Capacity", "optgroup3");
+
+  chooseLanguage("Autre unité de volume", "Other volume unit", "optgroup4");
+
+  chooseLanguage("Fraction", "Fraction", "optgroup5");
+
+  // Choose person mode by default.
   selectMode();
-  // The creation of the line is triggered by a click on the button.
-  document
-    .getElementById("addIngredientButton")
-    .addEventListener("click", addLine);
 
-  ingredientSelect.addEventListener("focus", updateSelect);
+  // Valider une ligne de recette, au clic sur le bouton ou avec la touche "entrée".
+  const addButton = document.getElementById("addButton");
+  if (addButton) {
+    addButton.addEventListener("click", () => {
+      const isValid = validateLine();
+      if (isValid) {
+        // Si la validation est réussie, cache le message d'erreur s'il existe.
+        const errorMessage = document.getElementById("error");
+        if (errorMessage) {
+          errorMessage.remove();
+        }
+      }
+    });
+  }
+
+  const fields = [
+    document.getElementById("ingredient-quantity"),
+    document.getElementById("ingredientUnity"),
+    document.getElementById("ingredient-name"),
+  ];
+
+  fields.forEach((field) => {
+    if (field) {
+      field.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          const isValid = validateLine();
+          if (isValid) {
+            // Si la validation est réussie, cache le message d'erreur s'il existe.
+            const errorMessage = document.getElementById("error");
+            if (errorMessage) {
+              errorMessage.remove();
+            }
+          }
+        }
+      });
+    }
+  });
+
+  // Récupère les lignes déjà validées pour les choix du menu d'options.
+  const ingredientOptionMenu = document.getElementById("ingredientSelect")
+  ingredientOptionMenu.addEventListener("focus", updateSelect);
+  // Filter the content of inputs supposed to be number inputs.
+  const numberInputs = Array.from(
+    document.getElementsByClassName("ingredient-quantity")
+  );
+  numberInputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      let newValue = isNumber(input.value, false);
+      input.value = newValue;
+    });
+  });
+
+  const startPortionsInput = document.getElementById("startPortions");
+  startPortionsInput.addEventListener("input", () => {
+    let newValue = isNumber(startPortionsInput.value, true);
+    startPortionsInput.value = newValue;
+  });
+
+  const endPortionsInput = document.getElementById("endPortions");
+  endPortionsInput.addEventListener("input", () => {
+    let newValue = isNumber(endPortionsInput.value, true);
+    endPortionsInput.value = newValue;
+  });
+
+  const endQuantityInput = document.getElementById("endQuantity");
+  endQuantityInput.addEventListener("input", () => {
+    let newValue = isNumber(endQuantityInput.value, true);
+    endQuantityInput.value = newValue;
+  });
+
+  // The creation of the line is triggered by a click on the button.
+  // document
+  //   .getElementById("addIngredientButton")
+  //   .addEventListener("click", addLine);
+
+  // ingredientSelect.addEventListener("focus", updateSelect); CODE MORT?
 
   document
     .getElementById("personSubmitButton")
@@ -155,9 +292,9 @@ window.addEventListener("DOMContentLoaded", () => {
     .addEventListener("click", getValues);
 
   // Handle the center problem by removing the property if the main section is high enough.
-  document
-    .getElementById("addIngredientButton")
-    .addEventListener("click", scroll);
+  // document
+  //   .getElementById("addIngredientButton")
+  //   .addEventListener("click", scroll);
   document
     .getElementById("ingredientSubmitButton")
     .addEventListener("click", scroll);

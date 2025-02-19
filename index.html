@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Convert'Eat</title>
-    <link rel="icon" href="./assets/img/without-border-logo.png" type="image/png">
+    <link
+      rel="icon"
+      href="./assets/img/without-border-logo.png?v=2.3"
+      type="image/png"
+    />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap"
@@ -15,10 +19,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titan+One&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="assets/style/style.css" />
-    <link rel="stylesheet" href="assets/style/reset.css" />
+    <link rel="stylesheet" href="assets/style/style.css?v=2.3" />
+    <link rel="stylesheet" href="assets/style/reset.css?v=2.3" />
   </head>
 
   <body>
@@ -50,108 +57,285 @@
           <h1 id="main-title">
             <span id="main-title-one"></span><span id="main-title-two"></span>
           </h1>
-         
-          <h2 id="second-title-quantities">
-            <span id="second-title-quantities-one"></span>
-            <span id="second-title-quantities-two"></span>
-          </h2>
+          <div id="description">
+            <p id="descriptionText"></p>
+            <div class="followStep">
 
-          <!-------------------------------------------------------------------------------------
-        ---------------------------------- Formulaires ------------------------------------------
-        -------------------------------------------------------------------------------------->
-          <section id="ingredients-form">
-            <div id="ingredientsContainer">
-              <div class="ingredientLine">
-                <p>
-                  <input
-                    class="ingredient-quantity"
-                    type="number"
-                    min="1"
-                    name="quantity"
-                    placeholder="100"
-                    required
-                  /><input
-                    class="ingredient-name"
-                    type="text"
-                    name="ingredient"
-                    placeholder=""
-                    required
-                  />
-                </p>
-              </div>
-            </div>
-            <button type="button" id="addIngredientButton"></button>
-          </section>
- <!-------------------------------------------------------------------------------------
-        ---------------------------------- Choice Buttons -------------------------------------
-        ------------------------------------------------------------------------------------ -->
-
-        <h2 id="second-title-choice">
-          <span id="second-title-choice-one"></span>
-          <span id="second-title-choice-two"></span>
-        </h2>
-        <div id="mode-choice">
-          <button id="person-mode-button"></button>
-          <button id="ingredient-mode-button"></button>
-        </div>
-          <div id="person-choice-form">
-            <h2 id="second-title-people">
-              <span id="second-title-people-one"></span>
-              <span id="second-title-people-two"></span>
-            </h2>
-
-            <p id="people-number">
-              <span id="spanOne"></span>
-              <input
-                type="number"
-                min="1"
-                id="startPortions"
-                value="4"
-                required
-              />
-              <span id="spanTwo"></span>
-              <input
-                type="number"
-                min="1"
-                id="endPortions"
-                value="6"
-                required
-              />
-              <span id="spanThree"></span>
-            </p>
-            <div id="person-validate-section">
-              <button type="button" id="personSubmitButton"></button>
+                <span id="convert-span">Convert'</span
+                ><span id="eat-span">Eat</span>
+                <span id="descriptionSpan"></span>
+              </p>
+              <p id="followStepText"></p>
             </div>
           </div>
 
-          <div id="ingredient-choice-form">
-            <h2 id="ingredient-second-title-people">
-              <span id="ingredient-second-title-people-one"></span>
-              <span id="ingredient-second-title-people-two"></span>
+          <section class="relief">
+            <h2 id="second-title-quantities">
+              <div class="step-number">
+                <p>1</p>
+              </div>
+              <span id="second-title-quantities-one"></span>
+              <span id="second-title-quantities-two"></span>
             </h2>
+          
+            <!-------------------------------------------------------------------------------------
+        -------------------------------- Validated lines section -----------------------------------
+        -------------------------------------------------------------------------------------->
+            <section id="validated-lines">
+            </section>
+            <!-------------------------------------------------------------------------------------
+        ---------------------------------- Formulaires ------------------------------------------
+        -------------------------------------------------------------------------------------->
+            <section id="ingredients-form">
+              <div id="ingredientsContainer">
+                <div id="ingredientLine">
+                    <input
+                      id="ingredient-quantity"
+                      type="text"
+                      min="1"
+                      name="quantity"
+                      placeholder="0"
+                      inputmode="decimal"
+                      pattern="[0-9]*[.,]?[0-9]+"
+                      required
+                    />
 
-            <div id="ingredient-people-number">
-              <p id="maxi-line">
-                <span id="ingredient-spanOne"></span>
-                <select id="ingredientSelect">
-                  <option id="ingredientSelectOption" value=""></option>
-                </select>
-              </p>
-              <p id="mini-line">
-                <span id="ingredient-spanTwo"></span>
+                    <select id="ingredientUnity">
+                      <!-- Groupe Poids -->
+                      <optgroup id="optgroup1" label="">
+                        <option
+                          class="ingredientUnityOption"
+                          value="aucune unité"
+                          id="no-unit"
+                        ></option>
+                      </optgroup>
+                      <optgroup id="optgroup2" label="">
+                        <option
+                          class="ingredientUnityOption"
+                          value="milligrammes"
+                          id="milligrammes"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="centigrammes"
+                          id="centigrammes"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="décigrammes"
+                          id="décigrammes"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="grammes"
+                          id="grammes"
+                          selected
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="kilogrammes"
+                          id="kilogrammes"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="livres"
+                          id="livres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="onces"
+                          id="onces"
+                        ></option>
+                      </optgroup>
+
+                      <!-- Groupe Contenances -->
+                      <optgroup id="optgroup3" label="">
+                        <option
+                          class="ingredientUnityOption"
+                          value="millilitres"
+                          id="millilitres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="centilitres"
+                          id="centilitres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="décilitres"
+                          id="décilitres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="litres"
+                          id="litres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="pintes"
+                          id="pintes"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="gallons"
+                          id="gallons"
+                        ></option>
+                      </optgroup>
+
+                      <!-- Groupe Autres unités de volume -->
+                      <optgroup id="optgroup4" label="">
+                        <option
+                          class="ingredientUnityOption"
+                          value="cuillères à soupe"
+                          id="cuillères-à-soupe"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="cuillères à café"
+                          id="cuillères-à-café"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="verres"
+                          id="verres"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="tasses"
+                          id="tasses"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="bols"
+                          id="bols"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="pincées"
+                          id="pincées"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="poignées"
+                          id="poignées"
+                        ></option>
+                      </optgroup>
+
+                      <!-- Groupe Fractions -->
+                      <optgroup id="optgroup5" label="">
+                        <option
+                          class="ingredientUnityOption"
+                          value="moitié"
+                          id="moitié"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="tiers"
+                          id="tiers"
+                        ></option>
+                        <option
+                          class="ingredientUnityOption"
+                          value="quarts"
+                          id="quarts"
+                        ></option>
+                      </optgroup>
+                    </select>
+                    <input
+                      id="ingredient-name"
+                      type="text"
+                      name="ingredient"
+                      placeholder=""
+                      value=""
+                      required
+                    />
+                  <button id="addButton">+</button>
+                </div>
+              </div>
+            </section>
+          </section>
+          <section class="relief">
+            <!-------------------------------------------------------------------------------------
+            ---------------------------------- Choice Buttons -------------------------------------
+            ------------------------------------------------------------------------------------ -->
+
+            <h2 id="second-title-choice">
+              <div class="step-number">
+                <p>2</p>
+              </div>
+
+              <span id="second-title-choice-one"></span>
+              <span id="second-title-choice-two"></span>
+            </h2>
+            <div id="mode-choice">
+              <button id="person-mode-button"></button>
+              <button id="ingredient-mode-button"></button>
+            </div>
+            <div id="person-choice-form">
+              <h6 id="second-title-people">
+                <span id="second-title-people-one"></span>
+                <span id="second-title-people-two"></span>
+              </h6>
+
+              <p id="people-number">
+                <span id="spanOne"></span>
                 <input
-                  type="number"
+                  type="text"
                   min="1"
-                  id="endQuantity"
-                  value="6"
+                  id="startPortions"
+                  value="4"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
                   required
                 />
-                <span id="ingredient-spanThree"></span>
+                <span id="spanTwo"></span>
+                <input
+                  type="text"
+                  min="1"
+                  id="endPortions"
+                  value="6"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  required
+                />
+                <span id="spanThree"></span>
               </p>
             </div>
-            <div id="ingredient-validate-section">
-              <button type="button" id="ingredientSubmitButton"></button>
+
+            <div id="ingredient-choice-form">
+              <h6 id="ingredient-second-title-people">
+                <span id="ingredient-second-title-people-one"></span>
+                <span id="ingredient-second-title-people-two"></span>
+              </h6>
+
+              <div id="ingredient-people-number">
+                <p id="maxi-line">
+                  <span id="ingredient-spanOne"></span>
+                  <select id="ingredientSelect">
+                    <option id="ingredientSelectOption" value=""></option>
+                  </select>
+                </p>
+                <p id="mini-line">
+                  <span id="ingredient-spanTwo"></span>
+                  <input
+                    type="text"
+                    min="1"
+                    id="endQuantity"
+                    value="6"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    required
+                  />
+                  <span id="ingredient-spanThree"></span>
+                </p>
+              </div>
             </div>
+          </section>
+
+          <div id="person-validate-section">
+            <button type="button" id="personSubmitButton"></button>
+          </div>
+          <div id="ingredient-validate-section">
+            <button type="button" id="ingredientSubmitButton"></button>
           </div>
 
           <!-- -----------------------------------------------------------------------------------
@@ -180,9 +364,12 @@
 
         <section id="copyright">
           <div id="footer-logo">
-            <img src="./assets/img/without-border-logo.png" alt="logo ConvertEat" />
+            <img
+              src="./assets/img/without-border-logo.png"
+              alt="logo ConvertEat"
+            />
           </div>
-          <p>© 2025 <span>ConvertEat</span> - v2.</p>
+          <p>© 2025 <span>ConvertEat</span> - v2.2</p>
         </section>
       </footer>
 
@@ -336,7 +523,7 @@
 
       <!-- app.js is declared as a module but not really used as one. It is used as a "main" file
     to handle the other modules -->
-      <script type="module" src="app.js"></script>
+      <script type="module" src="app.js?v=2.3"></script>
     </div>
   </body>
 </html>

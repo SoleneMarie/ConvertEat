@@ -10,6 +10,8 @@ export const selectMode = () => {
 
   ingredientChoiceDiv.style.display = "none"
   personModeButton.classList.add("selected");
+  document.getElementById("personSubmitButton").style.display = "block";
+  document.getElementById("ingredientSubmitButton").style.display = "none";
 
   // Ajouter des événements de clic
   personModeButton.addEventListener("click", () => {
@@ -17,6 +19,8 @@ export const selectMode = () => {
     personChoiceDiv.style.display = "block"
     ingredientModeButton.classList.remove("selected");
     personModeButton.classList.add("selected");
+    document.getElementById("personSubmitButton").style.display = "block";
+    document.getElementById("ingredientSubmitButton").style.display = "none";
   });
 
   ingredientModeButton.addEventListener("click", () => {
@@ -24,5 +28,7 @@ export const selectMode = () => {
     personChoiceDiv.style.display = "none"
     personModeButton.classList.remove("selected");
     ingredientModeButton.classList.add("selected");
+    document.getElementById("personSubmitButton").style.display = "none";
+    document.getElementById("ingredientSubmitButton").style.display = "block";
   });
 };
