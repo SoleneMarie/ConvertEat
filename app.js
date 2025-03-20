@@ -206,6 +206,19 @@ window.addEventListener("DOMContentLoaded", () => {
   // Choose person mode by default.
   selectMode();
 
+  const input = document.getElementById("ingredient-quantity");
+
+  input.addEventListener("input", (event) => {
+    let value = event.target.value;
+    // Supprime les caractères qui ne sont pas des chiffres
+    value = value.replace(/[^0-9]/g, "");
+    if (value === "0") {
+      20;
+      value = "";
+    }
+    event.target.value = value;
+  });
+
   // Valider une ligne de recette, au clic sur le bouton ou avec la touche "entrée".
   const addButton = document.getElementById("addButton");
   if (addButton) {
@@ -245,7 +258,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // Récupère les lignes déjà validées pour les choix du menu d'options.
-  const ingredientOptionMenu = document.getElementById("ingredientSelect")
+  const ingredientOptionMenu = document.getElementById("ingredientSelect");
   ingredientOptionMenu.addEventListener("focus", updateSelect);
   // Filter the content of inputs supposed to be number inputs.
   const numberInputs = Array.from(

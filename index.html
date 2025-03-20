@@ -60,11 +60,9 @@
           <div id="description">
             <p id="descriptionText"></p>
             <div class="followStep">
-
-                <span id="convert-span">Convert'</span
-                ><span id="eat-span">Eat</span>
-                <span id="descriptionSpan"></span>
-              </p>
+              <span id="convert-span">Convert'</span
+              ><span id="eat-span">Eat</span>
+              <span id="descriptionSpan"></span>
               <p id="followStepText"></p>
             </div>
           </div>
@@ -77,177 +75,176 @@
               <span id="second-title-quantities-one"></span>
               <span id="second-title-quantities-two"></span>
             </h2>
-          
+
             <!-------------------------------------------------------------------------------------
         -------------------------------- Validated lines section -----------------------------------
         -------------------------------------------------------------------------------------->
-            <section id="validated-lines">
-            </section>
+            <section id="validated-lines"></section>
             <!-------------------------------------------------------------------------------------
         ---------------------------------- Formulaires ------------------------------------------
         -------------------------------------------------------------------------------------->
             <section id="ingredients-form">
               <div id="ingredientsContainer">
                 <div id="ingredientLine">
-                    <input
-                      id="ingredient-quantity"
-                      type="text"
-                      min="1"
-                      name="quantity"
-                      placeholder="0"
-                      inputmode="decimal"
-                      pattern="[0-9]*[.,]?[0-9]+"
-                      required
-                    />
+                  <input
+                    id="ingredient-quantity"
+                    type="text"
+                    min="1"
+                    name="quantity"
+                    placeholder="0"
+                    inputmode="decimal"
+                    required
+                  />
 
-                    <select id="ingredientUnity">
-                      <!-- Groupe Poids -->
-                      <optgroup id="optgroup1" label="">
-                        <option
-                          class="ingredientUnityOption"
-                          value="aucune unité"
-                          id="no-unit"
-                        ></option>
-                      </optgroup>
-                      <optgroup id="optgroup2" label="">
-                        <option
-                          class="ingredientUnityOption"
-                          value="milligrammes"
-                          id="milligrammes"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="centigrammes"
-                          id="centigrammes"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="décigrammes"
-                          id="décigrammes"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="grammes"
-                          id="grammes"
-                          selected
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="kilogrammes"
-                          id="kilogrammes"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="livres"
-                          id="livres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="onces"
-                          id="onces"
-                        ></option>
-                      </optgroup>
+                  <select id="ingredientUnity">
+                    <!-- Groupe Poids -->
+                    <optgroup id="optgroup1" label="">
+                      <option
+                        class="ingredientUnityOption"
+                        value="aucune unité"
+                        id="no-unit"
+                      ></option>
+                    </optgroup>
+                    <optgroup id="optgroup2" label="">
+                      <option
+                        class="ingredientUnityOption"
+                        value="milligrammes"
+                        id="milligrammes"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="centigrammes"
+                        id="centigrammes"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="décigrammes"
+                        id="décigrammes"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="grammes"
+                        id="grammes"
+                        selected
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="kilogrammes"
+                        id="kilogrammes"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="livres"
+                        id="livres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="onces"
+                        id="onces"
+                      ></option>
+                    </optgroup>
 
-                      <!-- Groupe Contenances -->
-                      <optgroup id="optgroup3" label="">
-                        <option
-                          class="ingredientUnityOption"
-                          value="millilitres"
-                          id="millilitres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="centilitres"
-                          id="centilitres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="décilitres"
-                          id="décilitres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="litres"
-                          id="litres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="pintes"
-                          id="pintes"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="gallons"
-                          id="gallons"
-                        ></option>
-                      </optgroup>
+                    <!-- Groupe Contenances -->
+                    <optgroup id="optgroup3" label="">
+                      <option
+                        class="ingredientUnityOption"
+                        value="millilitres"
+                        id="millilitres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="centilitres"
+                        id="centilitres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="décilitres"
+                        id="décilitres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="litres"
+                        id="litres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="pintes"
+                        id="pintes"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="gallons"
+                        id="gallons"
+                      ></option>
+                    </optgroup>
 
-                      <!-- Groupe Autres unités de volume -->
-                      <optgroup id="optgroup4" label="">
-                        <option
-                          class="ingredientUnityOption"
-                          value="cuillères à soupe"
-                          id="cuillères-à-soupe"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="cuillères à café"
-                          id="cuillères-à-café"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="verres"
-                          id="verres"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="tasses"
-                          id="tasses"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="bols"
-                          id="bols"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="pincées"
-                          id="pincées"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="poignées"
-                          id="poignées"
-                        ></option>
-                      </optgroup>
+                    <!-- Groupe Autres unités de volume -->
+                    <optgroup id="optgroup4" label="">
+                      <option
+                        class="ingredientUnityOption"
+                        value="cuillères à soupe"
+                        id="cuillères-à-soupe"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="cuillères à café"
+                        id="cuillères-à-café"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="verres"
+                        id="verres"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="tasses"
+                        id="tasses"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="bols"
+                        id="bols"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="pincées"
+                        id="pincées"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="poignées"
+                        id="poignées"
+                      ></option>
+                    </optgroup>
 
-                      <!-- Groupe Fractions -->
-                      <optgroup id="optgroup5" label="">
-                        <option
-                          class="ingredientUnityOption"
-                          value="moitié"
-                          id="moitié"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="tiers"
-                          id="tiers"
-                        ></option>
-                        <option
-                          class="ingredientUnityOption"
-                          value="quarts"
-                          id="quarts"
-                        ></option>
-                      </optgroup>
-                    </select>
-                    <input
-                      id="ingredient-name"
-                      type="text"
-                      name="ingredient"
-                      placeholder=""
-                      value=""
-                      required
-                    />
+                    <!-- Groupe Fractions -->
+                    <optgroup id="optgroup5" label="">
+                      <option
+                        class="ingredientUnityOption"
+                        value="moitié"
+                        id="moitié"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="tiers"
+                        id="tiers"
+                      ></option>
+                      <option
+                        class="ingredientUnityOption"
+                        value="quarts"
+                        id="quarts"
+                      ></option>
+                    </optgroup>
+                  </select>
+                  <input
+                    id="ingredient-name"
+                    type="text"
+                    name="ingredient"
+                    placeholder=""
+                    value=""
+                    required
+                  />
+
                   <button id="addButton">+</button>
                 </div>
               </div>

@@ -30,6 +30,9 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
         messageDiv.setAttribute("label", stringFr);
       } else {
         messageDiv.textContent = stringFr;
+        if (messageDiv.value) {
+          messageDiv.value = stringFr;
+        }
       }
     }
   };
@@ -46,6 +49,9 @@ export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
         messageDiv.setAttribute("label", newText);
       } else {
         messageDiv.textContent = newText;
+        if (messageDiv.value) {
+          messageDiv.value = newText;
+        }
       }
     }
   };

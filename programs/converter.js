@@ -14,7 +14,11 @@ export const converter = (ingredientsData) => {
     endPortionsElement = Number(document.getElementById("endPortions").value);
   } else {
     const startPortion = document.getElementById("ingredientSelect");
+    console.log("false start portion: ", startPortion.value);
     const startPortionValue = startPortion.value;
+    if (!startPortionValue) {
+      return [];
+    }
     //regex to extract a number from a string.
     const result = startPortionValue.match(/\d+(\.\d+)?/);
 
