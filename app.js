@@ -1,8 +1,8 @@
 import { chooseLanguage } from "./programs/chooseLanguage.js?v=2.3";
 import { isNumber } from "./programs/isNumber.js?v=2.3";
+import { autocomplete } from "./autocomplete.js";
 import { selectMode } from "./programs/selectMode.js?v=2.3";
 import { validateLine } from "./programs/validateLine.js";
-import { addLine } from "./programs/addLine.js?v=2.3";
 import { updateSelect } from "./programs/updateSelect.js?v=2.3";
 import { getValues } from "./programs/getValues.js?v=2.3";
 import { scroll } from "./programs/scroll.js?v=2.3";
@@ -217,6 +217,20 @@ window.addEventListener("DOMContentLoaded", () => {
       value = "";
     }
     event.target.value = value;
+  });
+
+  // Enclencher l'autocomplétion.
+  // Au chargement, une liste d'autocomplétion en français est créée.
+  let autocompleteInstance = autocomplete("fr", undefined);
+
+  const enButton = document.getElementById("en");
+  enButton.addEventListener("click", () => {
+    // "true" signifie qu'il existe déjà une instance à éditer.
+    autocompleteInstance = autocomplete("en", autocompleteInstance);
+  });
+  const frButton = document.getElementById("fr");
+  frButton.addEventListener("click", () => {
+    autocompleteInstance = autocomplete("fr", autocompleteInstance);
   });
 
   // Valider une ligne de recette, au clic sur le bouton ou avec la touche "entrée".

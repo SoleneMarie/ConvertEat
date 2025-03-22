@@ -1,5 +1,3 @@
-import { updateErrorMessage } from "./updateErrorMessage.js";
-
 export const chooseLanguage = (stringFr, stringEn, divID, isPlaceholder) => {
   const frenchButton = document.getElementById("fr");
   const englishButton = document.getElementById("en");
