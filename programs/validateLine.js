@@ -1,4 +1,5 @@
 import { updateErrorMessage } from "./updateErrorMessage.js";
+import { updateRecipe } from "./updateRecipe.js";
 
 export const validateLine = () => {
   let quantityInput = document.getElementById("ingredient-quantity");
@@ -6,8 +7,6 @@ export const validateLine = () => {
   let nameInput = document.getElementById("ingredient-name");
 
   let quantity = quantityInput.value;
-
-  console.log("quantité à la création de ligne:", quantity);
 
   // Si la quantité commence par "." ou ",", on ajoute un "0" devant
   if (quantity.startsWith(".") || quantity.startsWith(",")) {
@@ -19,7 +18,6 @@ export const validateLine = () => {
     quantity = quantity.slice(0, -1);
   }
 
-  console.log("Quantité après modification:", quantity);
   let unit = unitMenu.value;
   let name = nameInput.value;
 
@@ -79,6 +77,7 @@ export const validateLine = () => {
   button.classList.add("delete-line-button");
   button.addEventListener("click", function () {
     line.remove();
+    updateRecipe("noMessage");
   });
 
   const line = document.createElement("div");

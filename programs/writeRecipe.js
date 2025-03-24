@@ -1,11 +1,13 @@
 import { updateErrorMessage } from "./updateErrorMessage.js";
 
-export const writeRecipe = (newData) => {
+export const writeRecipe = (newData, message) => {
   const recipeContainer = document.getElementById("recipeContainer");
   recipeContainer.innerHTML = "";
 
   if (!newData || newData.length < 1) {
-    updateErrorMessage(1);
+    if (message === undefined) {
+      updateErrorMessage(1);
+    }
     return;
   }
 

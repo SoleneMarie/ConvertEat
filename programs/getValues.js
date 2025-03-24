@@ -1,11 +1,10 @@
 import { converter } from "./converter.js";
 import { writeRecipe } from "./writeRecipe.js";
 
-export const getValues = () => {
+export const getValues = (message) => {
   const ingredientLines = Array.from(
     document.getElementsByClassName("new-line-text")
   );
-  console.log(ingredientLines);
   const ingredientsData = [];
 
   ingredientLines.forEach((line) => {
@@ -26,5 +25,5 @@ export const getValues = () => {
   });
 
   const newData = converter(ingredientsData);
-  writeRecipe(newData);
+  writeRecipe(newData, message);
 };

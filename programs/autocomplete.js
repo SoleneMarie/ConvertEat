@@ -1,5 +1,5 @@
-import { frenchIngredients } from "./programs/frenchIngredients.js";
-import { englishIngredients } from "./programs/englishIngredients.js";
+import { frenchIngredients } from "./frenchIngredients.js";
+import { englishIngredients } from "./englishIngredients.js";
 
 export const autocomplete = (language, autocompleteInstance) => {
   // Obtenir le bon tableau d'ingrédients, dans l'ordre alphabétique.
