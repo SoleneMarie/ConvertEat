@@ -1,13 +1,13 @@
-import { frenchFirst } from "./programs/frenchFirst.js";
-import { isNumber } from "./programs/isNumber.js?v=2.3";
-import { autocomplete } from "./programs/autocomplete.js";
-import { selectMode } from "./programs/selectMode.js?v=2.3";
-import { validateLine } from "./programs/validateLine.js";
-import { updateSelect } from "./programs/updateSelect.js?v=2.3";
-import { getValues } from "./programs/getValues.js?v=2.3";
-import { updateRecipe } from "./programs/updateRecipe.js";
-import { scroll } from "./programs/scroll.js?v=2.3";
-import { modal } from "./programs/modal.js?v=2.3";
+import { frenchFirst } from "./programs/frenchFirst.js?v=3";
+import { isNumber } from "./programs/isNumber.js?v=3";
+import { autocomplete } from "./programs/autocomplete.js?v=3";
+import { selectMode } from "./programs/selectMode.js?v=3";
+import { validateLine } from "./programs/validateLine.js?v=3";
+import { updateSelect } from "./programs/updateSelect.js?v=3";
+import { getValues } from "./programs/getValues.js?v=3";
+import { updateRecipe } from "./programs/updateRecipe.js?v=3";
+import { scroll } from "./programs/scroll.js?v=3";
+import { modal } from "./programs/modal.js?v=3";
 
 window.addEventListener("DOMContentLoaded", () => {
   // Au premier chargement, toute la page est en français.

@@ -1,8 +1,8 @@
-@import url("header.css?v=2.3");
-@import url("mainForm.css?v=2.3");
-@import url("mainRecipe.css?v=2.3");
-@import url("footer.css?v=2.3");
-@import url("modal.css?v=2.3");
+@import url("header.css?v=3");
+@import url("mainForm.css?v=3");
+@import url("mainRecipe.css?v=3");
+@import url("footer.css?v=3");
+@import url("modal.css?v=3");
 
 /* :root {
   --primary-color: #238f8f;
@@ -18,7 +18,7 @@
 } */
 
 :root {
-  --background-color:#a8d5d5;
+  --background-color: #a8d5d5;
   --primary-color: #53a4a4;
   --secondary-color: #f0f0f0;
   --button-color: #53a4a4;
@@ -49,7 +49,7 @@ body {
 
 #main {
   width: 100%;
-  max-width: 1100px; /* Limite la largeur du contenu */
+  max-width: 1000px; /* Limite la largeur du contenu */
 }
 
 @media (max-width: 400px) {

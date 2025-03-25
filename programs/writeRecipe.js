@@ -1,4 +1,4 @@
-import { updateErrorMessage } from "./updateErrorMessage.js";
+import { updateErrorMessage } from "./updateErrorMessage.js?v=3";
 
 export const writeRecipe = (newData, message) => {
   const recipeContainer = document.getElementById("recipeContainer");

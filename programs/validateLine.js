@@ -1,5 +1,5 @@
-import { updateErrorMessage } from "./updateErrorMessage.js";
-import { updateRecipe } from "./updateRecipe.js";
+import { updateErrorMessage } from "./updateErrorMessage.js?v=3";
+import { updateRecipe } from "./updateRecipe.js?v=3";
 
 export const validateLine = () => {
   let quantityInput = document.getElementById("ingredient-quantity");

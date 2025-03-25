@@ -78,7 +78,7 @@
   #ingredients-form {
     flex-direction: column;
     justify-content: center;
-    margin: 8px 6px;
+    margin: 4px 6px;
   }
 
   #ingredientsContainer {
@@ -94,6 +94,10 @@
     height: 30px;
   }
 
+  .awesomplete {
+    width: 100%;
+  }
+
   #ingredient-name {
     width: 100%;
     height: 30px;
@@ -104,12 +108,12 @@
   #addButton {
     width: 20px;
     font-size: 40px;
-    margin: -5px 4px 0 4px;
+    margin: -2px 4px 0 6px;
     transition: all 0.1s ease;
   }
+
   #addButton:hover {
-    font-size: 42px;
-    margin: -2px 4px 0 4px;
+    transform: scale(1.05);
   }
 
   #mode-choice button {
@@ -160,6 +164,19 @@
   .relief {
     margin: 22px 4px;
   }
+
+  .delete-line-button {
+    font-size: 20px;
+    margin-left: 4px;
+  }
+
+  .new-line {
+    font-size: 13px;
+  }
+
+  #validated-lines {
+    padding: 4px 10px;
+  }
 }
 
 @media (min-width: 760px) and (max-width: 900px) {
@@ -189,8 +206,12 @@
     height: 30px;
   }
 
+  .awesomplete {
+    width: 80%;
+  }
+
   #ingredient-name {
-    width: 82%;
+    width: 100%;
     height: 30px;
     margin: 0 10px 0 6px;
   }
@@ -242,10 +263,6 @@
     font-size: 20px;
   }
 
-  #ingredient-name {
-    width: 65%;
-  }
-
   .followStep {
     font-size: 16px;
     align-items: center;
@@ -254,7 +271,7 @@
   }
 
   #description {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   #convert-span,
@@ -284,12 +301,30 @@
   #addButton {
     width: 20px;
     font-size: 40px;
-    margin: -5px 4px 0 4px;
+    margin: -2px 4px 0 4px;
     transition: all 0.1s ease;
   }
+
   #addButton:hover {
-    font-size: 42px;
-    margin: -2px 4px 0 4px;
+    transform: scale(1.05);
+  }
+
+  .delete-line-button {
+    font-size: 20px;
+    margin-left: 4px;
+  }
+
+  .new-line {
+    font-size: 14px;
+  }
+
+  #validated-lines {
+    padding: 4px 10px;
+  }
+
+  #maxi-line {
+    display: flex;
+    gap: 6px;
   }
 }
 
@@ -318,10 +353,14 @@
     height: 30px;
   }
 
-  #ingredient-name {
+  .awesomplete {
     width: 80%;
+  }
+
+  #ingredient-name {
     height: 30px;
     margin: 0 10px 0 6px;
+    width: 100%;
   }
 
   select {
@@ -329,12 +368,12 @@
   }
 
   #ingredientsContainer {
-    width: 70%;
+    width: 80%;
   }
 
   #ingredients-form {
     justify-content: center;
-    margin: 16px 12px;
+    margin: 6px 12px;
   }
 
   #mode-choice button {
@@ -408,12 +447,36 @@
   #addButton {
     width: 20px;
     font-size: 40px;
-    margin: -5px 4px 0 4px;
+    margin: -2px 4px 0 6px;
     transition: all 0.1s ease;
   }
+
   #addButton:hover {
-    font-size: 42px;
-    margin: -2px 6px 0 6px;
+    transform: scale(1.05);
+  }
+
+  .delete-line-button {
+    font-size: 20px;
+    margin-left: 4px;
+  }
+
+  .new-line {
+    font-size: 14px;
+  }
+
+  #validated-lines {
+    align-self: center;
+    width: 80%;
+    padding: 4px 14px;
+  }
+
+  #maxi-line {
+    display: flex;
+    gap: 6px;
+  }
+
+  #second-title-quantities {
+    padding-bottom: 8px;
   }
 }
 
@@ -455,6 +518,7 @@ h6 {
 
 #ingredients-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -515,8 +579,9 @@ h6 {
 
 #endPortions,
 #endQuantity {
-  width: 50px;
+  width: 40px;
 }
+
 #mode-choice button {
   color: var(--secondary-color);
   font-weight: bold;
@@ -586,7 +651,7 @@ h6 {
   border-radius: 10px;
   transition: all 0.3s ease;
   padding: 4px;
-  margin: 6px 0;
+  margin: 6px 0 10px 0;
 }
 
 #personSubmitButton {
@@ -617,7 +682,8 @@ h6 {
   align-items: center;
 }
 
-#error {
+#error,
+#error2 {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 700;
@@ -653,6 +719,9 @@ select:-webkit-autofill:focus {
   font-weight: 600;
   color: var(--dark-text-color);
   text-align: center;
+}
+#descriptionSpan {
+  margin-top: 2px;
 }
 
 .followStep {
@@ -692,16 +761,15 @@ select:-webkit-autofill:focus {
 }
 
 select {
+  border: none !important;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  text-align: center;
   margin: 0 4px;
   padding: 2px 2px;
   border-radius: 8px;
-  text-align: center;
   color: var(--dark-text-color);
-  border: none;
+  border: none !important;
   font-family: inherit;
   font-weight: 500;
   font-size: 13px;
@@ -711,9 +779,79 @@ select {
 option {
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 100%;
 }
 
 #addButton {
   color: var(--primary-color);
   font-weight: 600;
+}
+
+#validated-lines {
+  margin: 2px 6px;
+  border-radius: 10px;
+  color: var(--dark-text-color);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  line-height: 26px;
+}
+
+.new-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.new-line-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.delete-line-button {
+  color: var(--error-message);
+  font-weight: 800;
+}
+
+.awesomplete {
+  font-size: 14px;
+  color: var(--dark-text-color);
+}
+
+.awesomplete ul {
+  border: solid 1px var(--secondary-color);
+}
+
+.awesomplete > ul > li {
+  font-size: 13px;
+}
+
+.awesomplete > ul > li:hover {
+  background: var(--background-color);
+  color: var(--dark-text-color);
+}
+
+.awesomplete > ul > li[aria-selected="true"] {
+  background: var(--background-color);
+  color: var(--dark-text-color);
+}
+
+.awesomplete mark {
+  background: var(--background-color);
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.awesomplete > ul > li:hover mark {
+  background: var(--background-color);
+  color: var(--dark-text-color);
+}
+
+.awesomplete > ul > li[aria-selected="true"] mark {
+  background: var(--background-color);
+  color: var(--dark-text-color);
 }

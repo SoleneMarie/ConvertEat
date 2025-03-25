@@ -1,4 +1,4 @@
-import { updateRecipe } from "./updateRecipe.js";
+import { updateRecipe } from "./updateRecipe.js?v=3";
 
 export const selectMode = () => {
   const personModeButton = document.getElementById("person-mode-button");

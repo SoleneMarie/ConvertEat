@@ -1,5 +1,5 @@
-import { converter } from "./converter.js";
-import { writeRecipe } from "./writeRecipe.js";
+import { converter } from "./converter.js?v=3";
+import { writeRecipe } from "./writeRecipe.js?v=3";
 
 export const getValues = (message) => {
   const ingredientLines = Array.from(

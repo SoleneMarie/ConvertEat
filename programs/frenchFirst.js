@@ -1,4 +1,4 @@
-import { chooseLanguage } from "./chooseLanguage.js";
+import { chooseLanguage } from "./chooseLanguage.js?v=3";
 
 export const frenchFirst = () => {
   chooseLanguage(

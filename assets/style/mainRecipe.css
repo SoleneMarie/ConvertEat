@@ -1,4 +1,12 @@
-@media (max-width: 760px) {
+@media (max-width: 400px) {
+  h3 {
+    font-size: 20px;
+  }
+  .recipeLine {
+    font-size: 13px;
+  }
+}
+@media (min-width: 400px) and (max-width: 760px) {
   h3 {
     font-size: 20px;
   }
@@ -28,10 +36,11 @@
 .recipe-background {
   display: flex;
   flex-direction: column;
+  gap: 8px;
   width: 100%;
-  padding: 16px;
+  padding: 16px 8px;
   margin: 10px;
-  background-color: var(--button-hover-color);
+  background-color: var(--background-color);
   border: solid 4px var(--primary-color);
   border-radius: 10px;
 }
@@ -41,7 +50,7 @@ h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   color: var(--dark-text-color);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .recipeLine {
